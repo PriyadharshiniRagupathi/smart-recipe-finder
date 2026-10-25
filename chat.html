@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smart Recipe Finder</title>
+        <link rel="stylesheet" href="style2.css">
+        <link rel="icon"  href="hey.icon.png">
+        
+    </head>
+    <body>
+        
+        <div class="page">
+            
+    <button type="button" id="toggleIngredients">
+        🌿 Choose Ingredients
+    </button>
+
+    <aside class="ingredients" id="ingredientsPanel">
+                <h2>🌿 Ingredients</h2>
+<section>
+    <h3>🥦 Vegetables</h3>
+
+    <label><input type="checkbox" value="Tomato"> Tomato</label>
+    <label><input type="checkbox" value="Onion"> Onion</label>
+    <label><input type="checkbox" value="Potato"> Potato</label>
+    <label><input type="checkbox" value="Carrot"> Carrot</label>
+    <label><input type="checkbox" value="Green Peas"> Green Peas</label>
+    <label><input type="checkbox" value="Beans"> Beans</label>
+    <label><input type="checkbox" value="Capsicum"> Capsicum</label>
+    <label><input type="checkbox" value="Cucumber"> Cucumber</label>
+    <label><input type="checkbox" value="Cabbage"> Cabbage</label>
+    <label><input type="checkbox" value="Cauliflower"> Cauliflower</label>
+    <label><input type="checkbox" value="Brinjal"> Brinjal</label>
+    <label><input type="checkbox" value="Baby Brinjal"> Baby Brinjal</label>
+    <label><input type="checkbox" value="Spinach"> Spinach</label>
+    <label><input type="checkbox" value="Sweet Corn"> Sweet Corn</label>
+    <label><input type="checkbox" value="Gongura Leaves"> Gongura Leaves</label>
+    <label><input type="checkbox" value="Palaamoos"> Palaamoos</label>
+    <label><input type="checkbox" value="Shallots"> Shallots</label>
+    <label><input type="checkbox" value="Small Onions"> Small Onions</label>
+    <label><input type="checkbox" value="Mushrooms"> Mushrooms</label>
+    <label><input type="checkbox" value="Mixed Vegetables"> Mixed Vegetables</label>
+</section>
+<section>
+    <h3>🥛 Dairy</h3>
+
+    <label><input type="checkbox" value="Milk"> Milk</label>
+    <label><input type="checkbox" value="Curd"> Curd</label>
+    <label><input type="checkbox" value="Yogurt"> Yogurt</label>
+    <label><input type="checkbox" value="Paneer"> Paneer</label>
+    <label><input type="checkbox" value="Cheese"> Cheese</label>
+    <label><input type="checkbox" value="Butter"> Butter</label>
+    <label><input type="checkbox" value="Cream"> Cream</label>
+    <label><input type="checkbox" value="Ghee"> Ghee</label>
+</section>
+                <section>
+    <h3>🍎 Fruits</h3>
+
+    <label><input type="checkbox" value="Apple"> Apple</label>
+    <label><input type="checkbox" value="Banana"> Banana</label>
+    <label><input type="checkbox" value="Mango"> Mango</label>
+    <label><input type="checkbox" value="Orange"> Orange</label>
+    <label><input type="checkbox" value="Grapes"> Grapes</label>
+    <label><input type="checkbox" value="Papaya"> Papaya</label>
+    <label><input type="checkbox" value="Pineapple"> Pineapple</label>
+    <label><input type="checkbox" value="Watermelon"> Watermelon</label>
+    <label><input type="checkbox" value="Lemon"> Lemon</label>
+    <label><input type="checkbox" value="Raw Mango"> Raw Mango</label>
+</section>
+                <section>
+    <h3>🌾 Grains &amp; Pulses</h3>
+
+    <label><input type="checkbox" value="Rice"> Rice</label>
+    <label><input type="checkbox" value="Basmati Rice"> Basmati Rice</label>
+    <label><input type="checkbox" value="Idli Rice"> Idli Rice</label>
+    <label><input type="checkbox" value="Ragi"> Ragi</label>
+    <label><input type="checkbox" value="Wheat Flour"> Wheat Flour</label>
+    <label><input type="checkbox" value="Oats"> Oats</label>
+    <label><input type="checkbox" value="Cornflakes"> Cornflakes</label>
+
+    <label><input type="checkbox" value="Urad Dal"> Urad Dal</label>
+    <label><input type="checkbox" value="Toor Dal"> Toor Dal</label>
+    <label><input type="checkbox" value="Chana Dal"> Chana Dal</label>
+    <label><input type="checkbox" value="Moong Dal"> Moong Dal</label>
+    <label><input type="checkbox" value="Rajma"> Rajma</label>
+    <label><input type="checkbox" value="Chickpeas"> Chickpeas</label>
+    <label><input type="checkbox" value="Green Gram"> Green Gram</label>
+    <label><input type="checkbox" value="Peanuts"> Peanuts</label>
+</section>
+<section>
+    <h3>🌶️ Spices</h3>
+
+    <label><input type="checkbox" value="Black Pepper"> Black Pepper</label>
+    <label><input type="checkbox" value="Cumin Seeds"> Cumin Seeds</label>
+    <label><input type="checkbox" value="Fennel Seeds"> Fennel Seeds</label>
+    <label><input type="checkbox" value="Mustard Seeds"> Mustard Seeds</label>
+    <label><input type="checkbox" value="Coriander Seeds"> Coriander Seeds</label>
+
+    <label><input type="checkbox" value="Chilli Powder"> Chilli Powder</label>
+    <label><input type="checkbox" value="Turmeric Powder"> Turmeric Powder</label>
+    <label><input type="checkbox" value="Coriander Powder"> Coriander Powder</label>
+    <label><input type="checkbox" value="Garam Masala"> Garam Masala</label>
+    <label><input type="checkbox" value="Biryani Masala"> Biryani Masala</label>
+    <label><input type="checkbox" value="Sambar Powder"> Sambar Powder</label>
+    <label><input type="checkbox" value="Bisi Bele Bath Powder"> Bisi Bele Bath Powder</label>
+
+    <label><input type="checkbox" value="Tamarind"> Tamarind</label>
+    <label><input type="checkbox" value="Red Chillies"> Red Chillies</label>
+</section>
+               <button class="ok-btn" id="ingredientOK">OK</button>
+            </aside>
+            <main class="main-content">
+
+    <!-- WEBSITE TITLE -->
+    <div class="hero-content">
+
+        <div class="chef-icon">👨‍🍳</div>
+
+        <h1>
+            <span>Smart</span><br>
+            Recipe Finder
+        </h1>
+
+        <p>Find delicious recipes with the ingredients you have</p>
+
+        <!-- SEARCH BAR -->
+       <div class="search-box">
+          <input type="text" id="searchInput" placeholder="I want to cook...">
+          <button id="searchBtn">Search</button>
+       </div>
+
+        <!-- 10 CATEGORY BUTTONS -->
+         
+        <nav class="categories">
+
+            <button><a href="#breakfast">
+                🍳
+              <span>Breakfast</span></a>
+            </button>
+
+            <button><a href="#lunch">
+                🍛
+               <span>Lunch</span></a>
+            </button>
+
+            <button><a href="#dinner">
+                🌙
+                <span>Dinner</span></a>
+            </button>
+
+            <button><a href="#snacks">
+                🍟
+                <span>Snacks</span></a>
+            </button>
+
+            <button><a href="#dessert">
+                🍰
+                <span>Desserts</span></a>
+            </button>
+
+            <button><a href="#healthy">
+                🥗
+                <span>Healthy</span></a>
+            </button>
+
+            <button><a href="#veg">
+                🌱
+                <span>Vegetarian</span></a>
+            </button>
+
+            <button><a href="#nonveg">
+                🍗
+                <span>Non-Vegetarian</span></a>
+            </button>
+
+            <button><a href="#south">
+                🌴
+                <span>South Indian</span></a>
+            </button>
+
+            <button><a href="#drinks">
+                🥤
+                <span>Drinks</span></a>
+            </button>
+
+        </nav>
+
+    </div>
+<br>
+<br><br>
+<!-- INGREDIENT SEARCH RESULTS -->
+<div id="ingredientResults" style="display:none;">
+    <h2>Recipes Based on Your Ingredients</h2>
+    <div id="ingredientRecipeList" class="food-container"></div>
+</div>
+
+    <!-- RECIPE SECTIONS -->
+    <section class="recipe-section" id="breakfast">
+
+        <!-- BREAKFAST -->
+        <div class="category-section">
+
+            <div class="section-title">
+                <a href="#top"><h2>🍳 Breakfast</h2></a>
+                <a href="newbreak.html">
+                    More →
+                </a>
+            </div>
+
+
+            <div class="food-container">
+
+                <!-- FOOD 1 -->
+                 
+                <a href="recipe.html?food=Idli" class="food-link">
+            <div class="food-card">
+                <img src="idly.jpg" alt="Idli">
+                <h3>Idli</h3>
+            </div>
+        </a>
+                
+                <!-- FOOD 2 -->
+                 
+                <a href="recipe.html?food=Masala%20Dosa" class="food-link">
+            <div class="food-card">
+                <img src="dosa.jpg" alt="Masala Dosa">
+                <h3>Masala Dosa</h3>
+            </div>
+        </a>
+                <!-- FOOD 3 -->
+                 <a href="recipe.html?food=Ven%20Pongal" class="food-link">
+                
+                <div class="food-card">
+                    <img src="pongal.jpg" alt="Ven Pongal">
+                    <h3>Ven Pongal</h3>
+                </div>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- LUNCH -->
+<section class="recipe-section" id="lunch">
+
+    <div class="category-section">
+
+        <div class="section-title">
+            <a href="#top">
+                <h2>🍛 Lunch</h2>
+            </a>
+            <a href="newlunch.html">
+                More →
+            </a>
+        </div>
+
+        <div class="food-container">
+     
+             <a href="recipe.html?food=Vegetable%20Biryani" class="food-link">
+
+            <div class="food-card">
+                <img src="bri.jpg" alt="Vegetable Biryani">
+                <h3>Vegetable Biryani</h3>
+            </div>
+            </a>
+
+             <a href="recipe.html?food=Chicken%20Biryani" class="food-link">
+            <div class="food-card">
+                <img src="Chicken-Biryani.jpg" alt="Chicken Biryani">
+                <h3>Chicken Biryani</h3>
+            </div>
+</a>
+           <a href="recipe.html?food=Tomato%20Rice" class="food-link">
+
+            <div class="food-card">
+                <img src="Tomato-Rice.jpg" alt="Tomato Rice">
+                <h3>Tomato Rice</h3>
+            </div>
+        </a>
+        </div>
+
+    </div>
+
+</section>
+<!-- DINNER -->
+<section class="recipe-section" id="dinner">
+
+    <div class="category-section">
+
+        <div class="section-title">
+           <a href="#top"> <h2>🌙 Dinner</h2></a>
+
+            <a href="newdinner.html">
+                More →
+            </a>
+        </div>
+
+
+        <div class="food-container">
+        <a href="recipe.html?food=Roti%20Dal" class="food-link">
+            <div class="food-card">
+                <img src="rotidal.jpg" alt="Roti and Dal">
+                <h3>Roti + Dal</h3>
+            </div>
+        </a>
+        <a href="recipe.html?food=Aloo%20Gobi" class="food-link">
+            <div class="food-card">
+                <img src="alogobi.jpg" alt="Aloo Gobi">
+                <h3>Aloo Gobi</h3>
+            </div>
+        </a>
+        <a href="recipe.html?food=Palak%20Paneer" class="food-link">
+            <div class="food-card">
+                <img src="palak.jpg" alt="Palak Paneer">
+                <h3>Palak Paneer</h3>
+            </div>
+        </a>
+        </div>
+
+    </div>
+
+</section>
+<!-- SNACKS -->
+<section class="recipe-section" id="snacks">
+
+    <div class="category-section">
+
+        <div class="section-title">
+            <a href="#top"><h2>🍟 Snacks</h2></a>
+
+            <a href="newsnacks.html">
+                More →
+            </a>
+        </div>
+
+
+        <div class="food-container">
+<a href="recipe.html?food=Samosa" class="food-link">
+            <div class="food-card">
+                <img src="samosa.jpg" alt="Samosa">
+                <h3>Samosa</h3>
+            </div>
+</a>
+<a href="recipe.html?food=Pakora" class="food-link">
+            <div class="food-card">
+                <img src="pakora.jpg" alt="Pakora">
+                <h3>Pakora</h3>
+            </div>
+</a>
+<a href="recipe.html?food=Murukku" class="food-link">
+            <div class="food-card">
+                <img src="murukku.jpg" alt="Murukku">
+                <h3>Murukku</h3>
+            </div>
+</a>
+        </div>
+
+    </div>
+
+</section>
+<!-- DESSERTS -->
+<section class="recipe-section" id="dessert">
+
+    <div class="category-section">
+
+        <div class="section-title">
+           <a href="#top"> <h2>🍰 Desserts</h2></a>
+
+            <a href="newdessert.html">
+                More →
+            </a>
+        </div>
+
+        <div class="food-container">
+<a href="recipe.html?food=Gulab%20Jamun" class="food-link">
+            <div class="food-card">
+                <img src="jamun.jpg" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+            </div>
+            </a>
+ <a href="recipe.html?food=Rasgulla" class="food-link">
+            <div class="food-card">
+                <img src="rasagulla.webp" alt="Rasgulla">
+                <h3>Rasgulla</h3>
+            </div>
+</a>
+ <a href="recipe.html?food=Jalebi" class="food-link">
+            <div class="food-card">
+                <img src="jalebi.webp" alt="Jalebi">
+                <h3>Jalebi</h3>
+            </div>
+</a>
+        </div>
+
+    </div>
+
+</section>
+<!-- HEALTHY -->
+<section class="recipe-section" id="healthy">
+
+    <div class="category-section">
+
+        <div class="section-title">
+           <a href="#top"> <h2>🥗 Healthy</h2></a>
+            <a href="newhealthy.html">
+                More →
+            </a>
+        </div>
+
+        <div class="food-container">
+<a href="recipe.html?food=Navadhanyam%20Sundal" class="food-link">
+            <div class="food-card">
+                <img src="navadhanya-sundal.jpg" alt="Navadhanyam Sundal">
+                <h3>Navadhanyam Sundal</h3>
+            </div>
+            </a>
+            <a href="recipe.html?food=Ragi%20Kanji" class="food-link">
+
+            <div class="food-card">
+                <img src="ragi.jpg" alt="Ragi Kanji">
+                <h3>Ragi Kanji</h3>
+            </div>
+            </a>
+            <a href="recipe.html?food=Kambu%20Koozh" class="food-link">
+
+            <div class="food-card">
+                <img src="kool.webp" alt="Kambu Koozh">
+                <h3>Kambu Koozh</h3>
+            </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- VEGETARIAN -->
+<section class="recipe-section" id="veg">
+
+    <div class="category-section">
+
+        <div class="section-title">
+         <a href="#top">   <h2>🌱 Vegetarian</h2></a>
+
+            <a href="newvegeterian.html">
+                More →
+            </a>
+        </div>
+
+        <div class="food-container">
+<a href="recipe.html?food=Mor%20Kuzhambu" class="food-link">
+            <div class="food-card">
+                <img src="mor-kuzhambu-recipe-2.webp" alt="Mor Kuzhambu">
+                <h3>Mor Kuzhambu</h3>
+            </div>
+</a>
+<a href="recipe.html?food=Palaamoos%20Sambar" class="food-link">
+            <div class="food-card">
+                <img src="jackkaai.jpg" alt="Palaamoos Sambar">
+                <h3>Palaamoos Sambar</h3>
+            </div>
+            </a>
+            <a href="recipe.html?food=Paal%20Kuzhambu" class="food-link">
+
+            <div class="food-card">
+                <img src="paal.jpg" alt="Paal Kuzhambu">
+                <h3>Paal Kuzhambu</h3>
+            </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- NON-VEGETARIAN -->
+<section class="recipe-section" id="nonveg">
+
+    <div class="category-section">
+
+        <div class="section-title">
+           <a href="#top"> <h2>🍗 Non-Vegetarian</h2></a>
+
+            <a href="newnonvegeterian.html">
+                More →
+            </a>
+        </div>
+
+        <div class="food-container">
+ <a href="recipe.html?food=Chicken%2065" class="food-link">
+            <div class="food-card">
+                <img src="65.jpg" alt="Chicken 65">
+                <h3>Chicken 65</h3>
+            </div>
+            </a>
+
+<a href="recipe.html?food=Chicken%20Chettinad" class="food-link">
+            <div class="food-card">
+                <img src="chettinad.jpg" alt="Chicken Chettinad">
+                <h3>Chicken Chettinad</h3>
+            </div>
+            </a>
+
+<a href="recipe.html?food=Mutton%20Curry" class="food-link">
+            <div class="food-card">
+                <img src="mcurry.jpg" alt="Mutton Curry">
+                <h3>Mutton Curry</h3>
+            </div>
+</a>
+        </div>
+
+    </div>
+
+</section>
+<!-- SOUTH INDIAN -->
+<section class="recipe-section" id="south">
+
+    <div class="category-section">
+
+        <div class="section-title">
+          <a href="#top">  <h2>🌴 South Indian</h2></a>
+
+            <a href="newsouthindian.html">
+                More →
+            </a>
+        </div>
+
+        <div class="food-container">
+ <a href="recipe.html?food=Bisi%20Bele%20Bath" class="food-link">
+            <div class="food-card">
+                <img src="bisi.jpg" alt="Bisi Bele Bath">
+                <h3>Bisi Bele Bath</h3>
+            </div>
+</a>
+<a href="recipe.html?food=Puttu%20With%20Kadala%20Curry" class="food-link">
+            <div class="food-card">
+                <img src="puttu.webp" alt="Puttu with Kadala Curry">
+                <h3>Puttu with Kadala Curry</h3>
+            </div>
+            </a>
+             <a href="recipe.html?food=Pulihora" class="food-link">
+
+            <div class="food-card">
+                <img src="pulisadham.jpg" alt="Pulihora">
+                <h3>Pulihora</h3>
+            </div>
+</a>
+        </div>
+
+    </div>
+
+</section>
+<!-- DRINKS -->
+<section class="recipe-section" id="drinks">
+
+    <div class="category-section">
+
+        <div class="section-title">
+          <a href="#top"><h2>🥤 Drinks</h2></a>
+
+            <a href="newdrinks.html">
+                More →
+            </a>
+        </div>
+
+        <div class="food-container">
+<a href="recipe.html?food=Mango%20Lassi" class="food-link">
+            <div class="food-card">
+                <img src="mango-lassi-recipe.jpg" alt="Mango Lassi">
+                <h3>Mango Lassi</h3>
+            </div>
+            </a>
+
+ <a href="recipe.html?food=Badam%20Milk" class="food-link">
+            <div class="food-card">
+                <img src="badham.jpg" alt="Badam Milk">
+                <h3>Badam Milk</h3>
+            </div>
+</a>
+<a href="recipe.html?food=Rose%20Milk" class="food-link">
+            <div class="food-card">
+                <img src="rose-milk-recipe-3.jpg" alt="Rose Milk">
+                <h3>Rose Milk</h3>
+            </div>
+</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+       <script>
+
+function searchRecipe() {
+
+const searchValue = document.getElementById("searchInput").value.trim();
+
+    if (searchValue === "") {
+        alert("Please enter a recipe name.");
+        return;
+    }
+
+    const food = searchValue
+        .toLowerCase()
+        .replace(/\s+/g, "-");
+
+    
+
+    window.location.href = "recipe.html?food=" + encodeURIComponent(food);
+}
+
+
+// Search button
+document.getElementById("searchBtn").addEventListener("click", searchRecipe);
+
+
+// Press Enter inside the search box
+document.getElementById("searchInput").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        searchRecipe();
+    }
+
+});
+
+document.getElementById("ingredientOK").addEventListener("click", async function () {
+    const selectedIngredients = Array.from(
+
+
+        
+
+    document.querySelectorAll(".ingredients input[type='checkbox']:checked")
+).map(input => input.value.toLowerCase().trim());
+
+
+        
+    sessionStorage.setItem(
+    "selectedIngredients",
+    JSON.stringify(selectedIngredients)
+);
+
+    if (selectedIngredients.length === 0) {
+        alert("Please select at least one ingredient.");
+        return;
+    }
+
+    const resultsBox = document.getElementById("ingredientResults");
+    const recipeList = document.getElementById("ingredientRecipeList");
+
+    resultsBox.style.display = "block";
+    recipeList.innerHTML = "<p>Searching recipes...</p>";
+
+    try {
+        const response = await fetch("http://localhost:3000/recipes");
+
+        if (!response.ok) {
+            throw new Error("Could not load recipes from the backend.");
+        }
+
+        const data = await response.json();
+        const recipes = Array.isArray(data) ? data : data.recipes;
+
+        if (!Array.isArray(recipes)) {
+            throw new Error("Unexpected recipe data from the server.");
+        }
+
+        const matchingRecipes = [];
+
+        for (const recipe of recipes) {
+            const detailResponse = await fetch(
+                `http://localhost:3000/recipe/${recipe.id}`
+            );
+
+            if (!detailResponse.ok) continue;
+
+            const detailData = await detailResponse.json();
+            const ingredients = detailData.ingredients || [];
+
+            const ingredientNames = ingredients.map(item =>
+                String(item.ingredient_name || "").toLowerCase().trim() 
+            );
+
+           
+const matched = selectedIngredients.every(selected =>
+    ingredientNames.some(name => name === selected)
+);
+
+if (matched) {
+    matchingRecipes.push(recipe);
+}
+
+        }
+
+        recipeList.innerHTML = "";
+
+        if (matchingRecipes.length === 0) {
+            recipeList.textContent = "No matching recipes found.";
+            return;
+        }
+        sessionStorage.setItem(
+    "matchingRecipes",
+    JSON.stringify(matchingRecipes)
+);
+
+        matchingRecipes.forEach(recipe => {
+            const link = document.createElement("a");
+            link.className = "food-link";
+
+            const food = recipe.name
+                .toLowerCase()
+                .trim()
+                .replace(/\s+/g, "-");
+
+            link.href = "recipe.html?food=" + encodeURIComponent(food);
+
+            const card = document.createElement("div");
+            card.className = "food-card";
+
+            const img = document.createElement("img");
+            img.src = recipe.image || recipe.image_url || "";
+            img.alt = recipe.name;
+
+            const heading = document.createElement("h3");
+            heading.textContent = recipe.name;
+
+            card.appendChild(img);
+            card.appendChild(heading);
+            link.appendChild(card);
+            recipeList.appendChild(link);
+        });
+
+        resultsBox.scrollIntoView({ behavior: "smooth" });
+
+    
+} catch (error) {
+    console.error("Ingredient search error:", error);
+    recipeList.textContent = "Error: " + error.message;
+}
+});
+// Restore previous ingredient results when returning to chat.html
+window.addEventListener("pageshow", function () {
+    const savedIngredients = JSON.parse(
+        sessionStorage.getItem("selectedIngredients") || "[]"
+    );
+
+    const savedRecipes = JSON.parse(
+        sessionStorage.getItem("matchingRecipes") || "[]"
+    );
+
+    // Restore selected checkboxes
+    document.querySelectorAll(
+        ".ingredients input[type='checkbox']"
+    ).forEach(input => {
+        input.checked = savedIngredients.includes(
+            input.value.toLowerCase().trim()
+        );
+    });
+
+    // Restore recipe cards
+    if (savedRecipes.length > 0) {
+        const resultsBox = document.getElementById("ingredientResults");
+        const recipeList = document.getElementById("ingredientRecipeList");
+
+        resultsBox.style.display = "block";
+        recipeList.innerHTML = "";
+
+        savedRecipes.forEach(recipe => {
+            const link = document.createElement("a");
+            link.className = "food-link";
+
+            const food = recipe.name.toLowerCase().trim().replace(/\s+/g, "-");
+            link.href = "recipe.html?food=" + encodeURIComponent(food);
+
+            const card = document.createElement("div");
+            card.className = "food-card";
+
+            const img = document.createElement("img");
+            img.src = recipe.image || recipe.image_url || "";
+            img.alt = recipe.name;
+
+            const heading = document.createElement("h3");
+            heading.textContent = recipe.name;
+
+            card.appendChild(img);
+            card.appendChild(heading);
+            link.appendChild(card);
+            recipeList.appendChild(link);
+        });
+    }
+});
+
+const toggleButton = document.getElementById("toggleIngredients");
+const ingredientsPanel = document.getElementById("ingredientsPanel");
+
+toggleButton.addEventListener("click", () => {
+    ingredientsPanel.classList.toggle("open");
+
+    toggleButton.textContent = ingredientsPanel.classList.contains("open")
+        ? "✖ Close Ingredients"
+        : "🌿 Choose Ingredients";
+});
+
+</script>
+        
+    </body>
+    </html>
