@@ -1,0 +1,29 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;min-height:100vh}
+.page{min-height:100vh;display:flex;background-image:linear-gradient(rgba(5,10,7,.35),rgba(5,10,7,.35)),url("smart_recipe_finder_background.jpg");background-size:cover;background-position:center;background-attachment:fixed}
+.ingredients{width:270px;min-height:100vh;padding:28px 22px;background:rgba(250,246,232,.94);color:#24351f;box-shadow:5px 0 25px rgba(0,0,0,.25)}
+.ingredients h2{font-family:Georgia,serif;font-size:28px;margin-bottom:22px}
+.ingredients section{padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid rgba(70,85,50,.2)}
+.ingredients h3{font-size:17px;margin-bottom:10px}
+.ingredients label{display:block;margin:7px 0;font-size:14px;cursor:pointer}
+.ingredients input{margin-right:8px;accent-color:#637d42}
+.ok-btn{width:100%;margin-top:4px;padding:11px;border:none;border-radius:22px;background:#637d42;color:white;font-size:16px;cursor:pointer}
+.main-content{flex:1;display:flex;justify-content:center;align-items:flex-start;text-align:center;padding:55px 35px 45px}
+.hero-content{width:min(900px,100%)}
+.chef-icon{font-size:42px;margin-bottom:8px}
+h1{font-family:Georgia,serif;font-size:clamp(42px,5vw,70px);line-height:.98;color:white;text-shadow:0 3px 12px rgba(0,0,0,.55)}
+h1 span{color:#9bc45a}
+.hero-content p{margin:20px 0 28px;color:#f5d66e;font-size:18px;text-shadow:0 2px 7px rgba(0,0,0,.7)}
+.search-box{display:flex;width:min(650px,100%);margin:0 auto 38px;padding:6px;background:rgba(255,255,255,.95);border-radius:32px}
+.search-box input{flex:1;min-width:0;border:none;outline:none;padding:14px 18px;font-size:16px;border-radius:26px;background:transparent}
+.search-box button{border:none;border-radius:26px;padding:0 25px;background:#637d42;color:white;font-size:15px;cursor:pointer}
+.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.categories button{min-height:105px;border:1px solid #d7b968;border-radius:15px;background:rgba(250,246,232,.96);color:#151515;font-size:31px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:transform .2s,background .2s}
+.categories button span{display:block;margin-top:8px;font-size:15px;font-weight:bold}
+.categories button:hover{transform:translateY(-4px);background:#fffdf5}
+@media(max-width:900px){.ingredients{width:220px}
+.categories{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){
+.page{display:block}
+.ingredients{width:100%;min-height:auto}
+ .main-content{padding:35px 18px}}

@@ -1,0 +1,4737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recipe | Smart Recipe Finder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="recipe-page">
+
+    <!-- Back Button -->
+<a href="newbreak.html" class="back-btn" id="backButton">
+    ← Back to Breakfast
+</a>
+
+    <!-- Recipe Heading -->
+    <div class="recipe-header">
+
+        <p class="recipe-category" id="recipeCategory">
+            SOUTH INDIAN • BREAKFAST
+        </p>
+
+        <h1 id="recipeName">Idli</h1>
+
+        <p class="recipe-description" id="recipeDescription">
+            Soft, fluffy and delicious South Indian steamed rice cakes.
+        </p>
+
+    </div>
+
+
+    <!-- Image + Information -->
+    <div class="recipe-main">
+
+        <div class="recipe-image-box">
+
+            <img id="recipeImage"
+                 src="idly.jpg"
+                 alt="Recipe">
+
+        </div>
+
+
+        <div class="recipe-info">
+
+            <div class="info-box">
+
+                <span>⏱️</span>
+
+                <div>
+                    <small>Preparation</small>
+                    <strong id="prepTime">15 mins</strong>
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>🔥</span>
+
+                <div>
+                    <small>Cooking</small>
+                    <strong id="cookTime">15 mins</strong>
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>👨‍👩‍👧‍👦</span>
+
+                <div>
+                    <small>Servings</small>
+                    <strong id="servings">4 People</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Ingredients + Preparation -->
+    <div class="recipe-grid">
+
+        <div class="recipe-box">
+
+            <h2>🥕 Ingredients</h2>
+
+            <ul class="ingredient-list" id="ingredients">
+
+                <li>
+                    <span>Idli Rice</span>
+                    <b>2 cups</b>
+                </li>
+
+                <li>
+                    <span>Urad Dal</span>
+                    <b>1 cup</b>
+                </li>
+
+                <li>
+                    <span>Poha</span>
+                    <b>½ cup</b>
+                </li>
+
+                <li>
+                    <span>Water</span>
+                    <b>As needed</b>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="recipe-box">
+
+            <h2>👩‍🍳 Preparation</h2>
+
+            <p id="preparation">
+                Soak the rice and urad dal separately. Grind them into
+                a smooth batter, mix them together and allow the batter
+                to ferment before steaming.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Steps -->
+    <div class="steps-box">
+
+        <h2>🍳 How to Make <span id="stepTitle">Idli</span></h2>
+
+        <div id="steps">
+
+            <div class="step">
+
+                <div class="step-number">01</div>
+
+                <div>
+                    <h3>Soak</h3>
+                    <p>
+                        Wash and soak the rice and urad dal separately
+                        for several hours.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">02</div>
+
+                <div>
+                    <h3>Grind</h3>
+                    <p>
+                        Grind the soaked rice and urad dal into a
+                        smooth batter.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">03</div>
+
+                <div>
+                    <h3>Ferment</h3>
+                    <p>
+                        Mix the batter well and allow it to ferment
+                        until it becomes light and fluffy.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">04</div>
+
+                <div>
+                    <h3>Steam</h3>
+                    <p>
+                        Pour the batter into idli moulds and steam
+                        until the idlis are cooked.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">05</div>
+
+                <div>
+                    <h3>Serve</h3>
+                    <p>
+                        Remove the idlis carefully and serve hot.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Video -->
+    <div class="video-box">
+
+        <h2>🎥 Recipe Video</h2>
+
+        <p>
+            Watch how to prepare delicious <span id="videoFood">Idli</span>.
+        </p>
+        <div class="video-container">
+        <iframe
+            id="recipeVideo"
+            src=""
+            title="Recipe Cooking Video"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    // Get the food name from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const food = urlParams.get("food");
+
+    console.log("Selected food:", food);
+
+
+
+
+    // Recipe data
+    const recipes = {
+
+        "idli": {
+
+            name: "Idli",
+
+            category: "SOUTH INDIAN • BREAKFAST",
+
+            image: "idly.jpg ",
+
+            description:
+                "Soft, fluffy and delicious South Indian steamed rice cakes, perfect with sambar and chutney.",
+            video: "https://www.youtube.com/embed/Ayo80PIb-Qg",
+
+            prep: "15 mins",
+
+            cook: "15 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["Idli Rice", "2 cups"],
+                ["Urad Dal", "1 cup"],
+                ["Poha", "½ cup"],
+                ["Water", "As needed"]
+            ],
+
+            preparation:
+                "Soak the rice and urad dal separately. Grind them into a smooth batter, mix them together and allow the batter to ferment before steaming.",
+
+            steps: [
+                ["Soak", "Wash and soak the rice and urad dal separately for several hours."],
+                ["Grind", "Grind the soaked rice and urad dal into a smooth batter."],
+                ["Ferment", "Mix the batter well and allow it to ferment until it becomes light and fluffy."],
+                ["Steam", "Pour the batter into idli moulds and steam until the idlis are cooked."],
+                ["Serve", "Remove the idlis carefully and serve hot with chutney and sambar."]
+            ]
+
+        },
+
+
+        "masala-dosa": {
+
+            name: "Masala Dosa",
+
+            category: "SOUTH INDIAN • BREAKFAST",
+
+            image: "dosa.jpg",
+
+            description:
+                "Crispy golden dosa filled with a delicious spiced potato filling.",
+            video: "https://www.youtube.com/embed/J75VQSxOtdo",    
+
+            prep: "20 mins",
+
+            cook: "20 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["Dosa Batter", "4 cups"],
+                ["Potatoes", "4"],
+                ["Onion", "2"],
+                ["Green Chilli", "2"],
+                ["Ginger", "1 small piece"]
+            ],
+
+            preparation:
+                "Prepare the potato filling and spread dosa batter thinly on a hot pan. Add the filling and fold the dosa.",
+
+            steps: [
+                ["Prepare Batter", "Keep the dosa batter ready."],
+                ["Prepare Filling", "Boil and mash the potatoes and prepare the filling."],
+                ["Make Dosa", "Spread the batter thinly on a hot pan."],
+                ["Add Filling", "Place the potato filling in the centre."],
+                ["Serve", "Fold the dosa and serve hot."]
+            ]
+
+        },
+
+
+        "ven-pongal": {
+
+            name: "Ven Pongal",
+
+            category: "SOUTH INDIAN • BREAKFAST",
+
+            image: "pongal.jpg",
+
+            description:
+                "A comforting South Indian dish made with rice and moong dal.",
+            video: "https://www.youtube.com/embed/rjdpb2UsFJM",    
+
+            prep: "10 mins",
+
+            cook: "25 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["Rice", "1 cup"],
+                ["Moong Dal", "½ cup"],
+                ["Ginger", "1 small piece"],
+                ["Cashews", "10"],
+                ["Ghee", "2 tbsp"]
+            ],
+
+            preparation:
+                "Cook rice and moong dal together until soft. Add the prepared ingredients and mix well.",
+
+            steps: [
+                ["Wash", "Wash the rice and moong dal thoroughly."],
+                ["Cook", "Cook them together until soft."],
+                ["Prepare", "Prepare the ginger and cashews."],
+                ["Mix", "Add ghee and the prepared ingredients."],
+                ["Serve", "Mix well and serve hot."]
+            ]
+
+        },
+
+
+        "poori-masala": {
+
+            name: "Poori Masala",
+
+            category: "SOUTH INDIAN • BREAKFAST",
+
+            image: "poori.jpg",
+
+            description:
+                "Soft and fluffy pooris served with a flavorful potato masala.",
+            video: "https://www.youtube.com/embed/Aokks98tw_I",
+            prep: "20 mins",
+
+            cook: "20 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["Wheat Flour", "2 cups"],
+                ["Potatoes", "4"],
+                ["Onion", "2"],
+                ["Green Chilli", "2"],
+                ["Ginger", "1 small piece"]
+            ],
+
+            preparation:
+                "Prepare a soft dough, roll small portions and cook the pooris. Prepare the potato masala separately.",
+
+            steps: [
+                ["Prepare Dough", "Prepare a soft dough using wheat flour and water."],
+                ["Prepare Masala", "Boil potatoes and prepare the potato masala."],
+                ["Roll", "Roll small portions of dough into round pooris."],
+                ["Cook", "Cook the pooris until they puff up."],
+                ["Serve", "Serve hot with potato masala."]
+            ]
+
+        },
+
+
+        "upma": {
+
+            name: "Upma",
+
+            category: "SOUTH INDIAN • BREAKFAST",
+
+            image: "upma.jpg",
+
+            description:
+                "A simple and delicious South Indian breakfast made with roasted semolina.",
+            video: "https://www.youtube.com/embed/cAoYsLXUKGI",
+            prep: "10 mins",
+
+            cook: "20 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["Rava / Semolina", "2 cups"],
+                ["Onion", "1"],
+                ["Carrot", "1"],
+                ["Green Chilli", "2"],
+                ["Ginger", "1 small piece"],
+                ["Water", "4 cups"]
+            ],
+
+            preparation:
+                "Roast the rava, cook the vegetables, add water and slowly mix in the roasted rava until soft and fluffy.",
+
+            steps: [
+                ["Roast Rava", "Dry roast the rava until lightly golden."],
+                ["Cook Vegetables", "Cook the onion, carrot, green chilli and ginger."],
+                ["Add Water", "Add water and bring it to a boil."],
+                ["Add Rava", "Slowly add rava while continuously stirring."],
+                ["Serve", "Cook until soft and serve hot."]
+            ]
+
+        },
+        //remaining 10 breakfast
+        "aloo-paratha": {
+
+            name: "Aloo Paratha",
+
+            category: "NORTH INDIAN • BREAKFAST",
+
+            image: "aloo.jpg",
+
+            description:
+                "Soft and flavorful Indian flatbread stuffed with a delicious spiced potato filling.",
+            video: "https://www.youtube.com/embed/jLmYDZ2zjSg",
+            prep: "20 mins",
+
+            cook: "25 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["Wheat Flour", "2 cups"],
+                ["Potatoes", "4"],
+                ["Onion", "1"],
+                ["Green Chilli", "2"],
+                ["Coriander Leaves", "2 tbsp"],
+                ["Garam Masala", "1 tsp"]
+            ],
+
+            preparation:
+                "Prepare a soft wheat dough and make a spiced potato filling. Stuff the filling inside the dough, roll it gently and cook the parathas on a hot pan.",
+
+            steps: [
+                ["Prepare Dough", "Mix wheat flour with water and prepare a soft dough."],
+                ["Prepare Filling", "Boil and mash the potatoes. Mix them with onion, green chilli, coriander and spices."],
+                ["Stuff", "Take a portion of dough, add the potato filling and seal it properly."],
+                ["Roll", "Gently roll the stuffed dough into a round paratha."],
+                ["Cook", "Cook the paratha on a hot pan until both sides are golden and serve hot."]
+            ]
+
+        },
+
+
+        "chole-bhature": {
+
+            name: "Chole Bhature",
+
+            category: "NORTH INDIAN • BREAKFAST",
+
+            image: "bhature.webp",
+
+            description:
+                "A popular North Indian breakfast consisting of spicy chickpea curry served with fluffy bhature.",
+            video: "https://www.youtube.com/embed/80FZbnl40q4",
+            prep: "20 mins",
+
+            cook: "30 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["Chickpeas", "2 cups"],
+                ["Wheat Flour", "2 cups"],
+                ["Onion", "2"],
+                ["Tomato", "2"],
+                ["Green Chilli", "2"],
+                ["Chole Masala", "2 tsp"]
+            ],
+
+            preparation:
+                "Cook the chickpeas with spices to prepare chole and make a soft dough for bhature. Roll and fry the bhature until they puff up.",
+
+            steps: [
+                ["Soak Chickpeas", "Soak chickpeas in water for several hours or overnight."],
+                ["Cook Chole", "Cook the chickpeas and prepare a flavorful curry using onion, tomato and spices."],
+                ["Prepare Dough", "Prepare a soft dough using wheat flour and water."],
+                ["Make Bhature", "Roll small portions of dough and cook them until they puff up."],
+                ["Serve", "Serve hot bhature with spicy chole."]
+            ]
+
+        },
+
+
+        "poha": {
+
+            name: "Poha",
+
+            category: "NORTH INDIAN • BREAKFAST",
+
+            image: "poha.jpg",
+
+            description:
+                "A light and tasty breakfast made with flattened rice, vegetables and mild spices.",
+            video: "https://www.youtube.com/embed/X35gOeA8l_4",
+            prep: "10 mins",
+
+            cook: "15 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["Poha", "2 cups"],
+                ["Onion", "1"],
+                ["Potato", "1"],
+                ["Green Chilli", "2"],
+                ["Peanuts", "¼ cup"],
+                ["Coriander Leaves", "2 tbsp"]
+            ],
+
+            preparation:
+                "Wash the poha gently and cook it with sautéed vegetables, peanuts and spices until soft and flavorful.",
+
+            steps: [
+                ["Wash Poha", "Wash the poha gently with water and drain it."],
+                ["Prepare Vegetables", "Cook onion, potato and green chilli until soft."],
+                ["Add Peanuts", "Add peanuts and lightly roast them with the vegetables."],
+                ["Add Poha", "Add the washed poha and mix everything gently."],
+                ["Serve", "Cook for a few minutes and garnish with coriander leaves."]
+            ]
+
+        },
+
+
+        "bread-omelette": {
+
+            name: "Bread Omelette",
+
+            category: "INDIAN • BREAKFAST",
+
+            image: "omblete.jpg",
+
+            description:
+                "A quick and delicious breakfast made with fluffy egg omelette served with toasted bread.",
+            video: "https://www.youtube.com/embed/QzuXzLtYUpE",
+            prep: "5 mins",
+
+            cook: "10 mins",
+
+            servings: "2 People",
+
+            ingredients: [
+                ["Eggs", "4"],
+                ["Bread Slices", "4"],
+                ["Onion", "1"],
+                ["Green Chilli", "1"],
+                ["Coriander Leaves", "2 tbsp"],
+                ["Pepper", "½ tsp"]
+            ],
+
+            preparation:
+                "Beat the eggs with vegetables and spices, cook the omelette on a pan and serve it with toasted bread.",
+
+            steps: [
+                ["Beat Eggs", "Break the eggs into a bowl and beat them well."],
+                ["Add Ingredients", "Add chopped onion, green chilli, coriander and pepper."],
+                ["Cook Omelette", "Pour the egg mixture onto a hot pan and cook both sides."],
+                ["Toast Bread", "Toast the bread slices until lightly crisp."],
+                ["Serve", "Place the omelette with toasted bread and serve hot."]
+            ]
+
+        },
+
+
+        "french-toast": {
+
+            name: "French Toast",
+
+            category: "WESTERN • BREAKFAST",
+
+            image: "toast.jpg",
+
+            description:
+                "Golden and delicious bread slices dipped in a sweet egg mixture and cooked until lightly crisp.",
+            video: "https://www.youtube.com/embed/qrWIlXUHvuE",
+            prep: "5 mins",
+
+            cook: "10 mins",
+
+            servings: "2 People",
+
+            ingredients: [
+                ["Bread Slices", "4"],
+                ["Eggs", "2"],
+                ["Milk", "½ cup"],
+                ["Sugar", "2 tbsp"],
+                ["Vanilla Essence", "½ tsp"],
+                ["Butter", "1 tbsp"]
+            ],
+
+            preparation:
+                "Prepare a sweet egg and milk mixture, dip the bread slices in it and cook them on a pan until golden.",
+
+            steps: [
+                ["Prepare Mixture", "Beat eggs with milk, sugar and vanilla essence."],
+                ["Dip Bread", "Dip each bread slice into the mixture evenly."],
+                ["Heat Pan", "Heat a pan and add a little butter."],
+                ["Cook", "Cook the soaked bread slices on both sides until golden."],
+                ["Serve", "Serve warm with fruits or your preferred topping."]
+            ]
+
+        },
+
+
+        "pancakes": {
+
+            name: "Pancakes",
+
+            category: "WESTERN • BREAKFAST",
+
+            image: "pancake.jpg",
+
+            description:
+                "Soft and fluffy pancakes that make a simple and delicious breakfast.",
+            video: "https://www.youtube.com/embed/mWHYhtprT5M",    
+
+            prep: "10 mins",
+
+            cook: "15 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["All-Purpose Flour", "1½ cups"],
+                ["Milk", "1 cup"],
+                ["Egg", "1"],
+                ["Sugar", "2 tbsp"],
+                ["Baking Powder", "1 tsp"],
+                ["Butter", "1 tbsp"]
+            ],
+
+            preparation:
+                "Mix the ingredients into a smooth batter and cook small portions on a hot pan until golden on both sides.",
+
+            steps: [
+                ["Prepare Batter", "Mix flour, sugar and baking powder in a bowl."],
+                ["Add Wet Ingredients", "Add milk and egg and mix until a smooth batter forms."],
+                ["Heat Pan", "Heat a pan and lightly grease it with butter."],
+                ["Cook Pancakes", "Pour a small amount of batter and cook both sides until golden."],
+                ["Serve", "Stack the pancakes and serve warm with your preferred topping."]
+            ]
+
+        },
+
+
+        "vegetable-sandwich": {
+
+            name: "Vegetable Sandwich",
+
+            category: "HEALTHY • BREAKFAST",
+
+            image: "sandwich.jpg",
+
+            description:
+                "A fresh and tasty sandwich filled with colorful vegetables and a flavorful spread.",
+                video: "https://www.youtube.com/embed/DoeenfPeZdc",
+
+            prep: "10 mins",
+
+            cook: "10 mins",
+
+            servings: "2 People",
+
+            ingredients: [
+                ["Bread Slices", "4"],
+                ["Carrot", "1"],
+                ["Cucumber", "1"],
+                ["Tomato", "1"],
+                ["Capsicum", "1"],
+                ["Butter", "2 tbsp"]
+            ],
+
+            preparation:
+                "Spread butter on bread slices, arrange fresh vegetables between the slices and toast the sandwich until lightly crisp.",
+
+            steps: [
+                ["Prepare Vegetables", "Wash and slice the carrot, cucumber, tomato and capsicum."],
+                ["Prepare Bread", "Spread butter evenly on the bread slices."],
+                ["Add Vegetables", "Arrange the sliced vegetables on the bread."],
+                ["Make Sandwich", "Place another bread slice on top and gently press it."],
+                ["Toast", "Toast the sandwich on a pan until lightly golden and serve."]
+            ]
+
+        },
+
+"cornflakes": {
+    name: "Cornflakes with Milk",
+    category: "CONTINENTAL • BREAKFAST",
+    image: "corn.jpg",
+    description: "A quick and easy breakfast made with crunchy cornflakes and fresh milk.",
+    video: "https://www.youtube.com/embed/zxtdjfGVqIg",
+    prep: "5 mins",
+    cook: "0 mins",
+    servings: "2 People",
+
+    ingredients: [
+        ["Cornflakes", "2 cups"],
+        ["Milk", "2 cups"],
+        ["Banana", "1"],
+        ["Honey", "1 tbsp"],
+        ["Nuts", "2 tbsp"]
+    ],
+
+    preparation: "Add cornflakes to a bowl, pour fresh milk over them and add fruits, nuts and honey.",
+
+    steps: [
+        ["Add Cornflakes", "Place cornflakes in a serving bowl."],
+        ["Add Milk", "Pour fresh milk over the cornflakes."],
+        ["Add Fruits", "Add sliced banana or other fruits."],
+        ["Add Nuts", "Add your preferred nuts."],
+        ["Serve", "Add honey and serve immediately."]
+    ]
+},
+
+           
+
+
+        "oatmeal": {
+
+            name: "Oatmeal",
+
+            category: "HEALTHY • BREAKFAST",
+
+            image: "oat.jpg",
+
+            description:
+                "A warm and comforting breakfast made with oats, milk and fresh fruits.",
+
+            video: "https://www.youtube.com/embed/7QrA96GEvTM",    
+
+            prep: "5 mins",
+
+            cook: "10 mins",
+
+            servings: "2 People",
+
+            ingredients: [
+                ["Oats", "1 cup"],
+                ["Milk", "2 cups"],
+                ["Banana", "1"],
+                ["Apple", "1"],
+                ["Honey", "1 tbsp"],
+                ["Nuts", "2 tbsp"]
+            ],
+
+            preparation:
+                "Cook oats with milk until soft and creamy. Add fresh fruits, nuts and honey before serving.",
+
+            steps: [
+                ["Heat Milk", "Pour milk into a pan and heat it gently."],
+                ["Add Oats", "Add oats to the warm milk and stir well."],
+                ["Cook", "Cook until the oats become soft and creamy."],
+                ["Add Toppings", "Add sliced fruits and nuts."],
+                ["Serve", "Add a little honey and serve warm."]
+            ]
+
+        },
+
+
+        "fruit-salad": {
+
+            name: "Fruit Salad",
+
+            category: "HEALTHY • BREAKFAST",
+
+            image: "salad.jpg",
+
+            description:
+                "A colorful and refreshing breakfast made with a variety of fresh fruits.",
+
+            video: "https://www.youtube.com/embed/nTm-_KujooY",    
+
+            prep: "10 mins",
+
+            cook: "0 mins",
+
+            servings: "4 People",
+
+            ingredients: [
+                ["Apple", "1"],
+                ["Banana", "1"],
+                ["Orange", "1"],
+                ["Grapes", "1 cup"],
+                ["Papaya", "1 cup"],
+                ["Honey", "1 tbsp"]
+            ],
+
+            preparation:
+                "Wash and cut the fruits into small pieces, combine them in a bowl and add a little honey before serving.",
+
+            steps: [
+                ["Wash Fruits", "Wash all the fruits thoroughly with clean water."],
+                ["Cut Fruits", "Peel and cut the fruits into small pieces."],
+                ["Combine", "Add all the cut fruits to a large bowl."],
+                ["Add Honey", "Drizzle a little honey over the fruits."],
+                ["Serve", "Mix gently and serve the fresh fruit salad."]
+            ]
+
+        },
+        /*lunch*/
+        "vegetable-biryani": {
+    name: "Vegetable Biryani",
+    category: "INDIAN • LUNCH",
+    image: "bri.jpg",
+    description: "A flavorful and aromatic rice dish cooked with fresh vegetables and fragrant spices.",
+    video: "https://www.youtube.com/embed/X4f6bv-Modg",
+    prep: "20 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Basmati Rice", "2 cups"],
+        ["Mixed Vegetables", "2 cups"],
+        ["Onion", "2"],
+        ["Tomato", "2"],
+        ["Green Chilli", "2"],
+        ["Yogurt", "½ cup"]
+    ],
+    preparation: "Wash and soak the rice. Cook the vegetables with onion and tomato, add the spices and combine with partially cooked rice. Cook together until the rice is fully done.",
+    steps: [
+        ["Prepare Rice", "Wash and soak the basmati rice before cooking."],
+        ["Cook Vegetables", "Cook the chopped vegetables with onion and tomato."],
+        ["Add Rice", "Add the partially cooked rice to the vegetable mixture."],
+        ["Cook Together", "Cover and cook on low heat until the rice is completely cooked."],
+        ["Serve", "Fluff the biryani gently and serve hot."]
+    ]
+},
+
+"chicken-biryani": {
+    name: "Chicken Biryani",
+    category: "INDIAN • LUNCH",page: "newlunch.html",
+    image: "Chicken-Biryani.jpg",
+    description: "Aromatic basmati rice cooked with tender chicken and flavorful spices.",
+    video: "https://www.youtube.com/embed/PVO-4Jnjpfk",
+    prep: "25 mins",
+    cook: "40 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Basmati Rice", "2 cups"],
+        ["Chicken", "500 g"],
+        ["Onion", "2"],
+        ["Tomato", "2"],
+        ["Yogurt", "½ cup"],
+        ["Ginger Garlic Paste", "2 tbsp"]
+    ],
+    preparation: "Marinate the chicken and prepare the rice separately. Cook the chicken with onion and tomato, layer it with rice and cook until the flavors combine.",
+    steps: [
+        ["Marinate Chicken", "Mix chicken with yogurt and ginger garlic paste."],
+        ["Prepare Rice", "Cook the basmati rice until partially done."],
+        ["Cook Chicken", "Cook the marinated chicken with onion and tomato."],
+        ["Layer", "Layer the rice over the chicken mixture."],
+        ["Serve", "Cover and cook until completely done, then serve hot."]
+    ]
+},
+
+"tomato-rice": {
+    name: "Tomato Rice",
+    category: "SOUTH INDIAN • LUNCH",page: "newlunch.html",
+    image: "Tomato-Rice.jpg",
+    description: "A simple and tasty rice dish prepared with fresh tomatoes and aromatic ingredients.",
+    video: "https://www.youtube.com/embed/njK2iywAJ_k",
+    prep: "10 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Cooked Rice", "3 cups"],
+        ["Tomatoes", "3"],
+        ["Onion", "1"],
+        ["Green Chilli", "2"],
+        ["Ginger", "1 small piece"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Cook the tomatoes and onions until soft and flavorful. Add the cooked rice and mix everything together.",
+    steps: [
+        ["Prepare Rice", "Cook the rice and keep it ready."],
+        ["Cook Tomato", "Cook chopped tomatoes and onion until soft."],
+        ["Add Ingredients", "Add green chilli and ginger."],
+        ["Add Rice", "Add the cooked rice and mix gently."],
+        ["Serve", "Garnish with coriander leaves and serve."]
+    ]
+},
+
+"lemon-rice": {
+    name: "Lemon Rice",
+    category: "SOUTH INDIAN • LUNCH",page: "newlunch.html",
+    image: "lemon.jpg",
+    description: "A refreshing South Indian rice dish with a bright lemon flavor.",
+    video: "https://www.youtube.com/embed/S582ox6c4l4",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Cooked Rice", "3 cups"],
+        ["Lemon", "2"],
+        ["Green Chilli", "2"],
+        ["Peanuts", "¼ cup"],
+        ["Ginger", "1 small piece"]
+    ],
+    preparation: "Prepare the seasoning, add cooked rice and finish with fresh lemon juice.",
+    steps: [
+        ["Cook Rice", "Prepare the rice and allow it to cool slightly."],
+        ["Prepare Seasoning", "Cook the peanuts, green chilli and ginger."],
+        ["Add Rice", "Add the cooked rice and mix gently."],
+        ["Add Lemon", "Add fresh lemon juice and mix well."],
+        ["Serve", "Serve the lemon rice warm or at room temperature."]
+    ]
+},
+
+"curd-rice": {
+    name: "Curd Rice",
+    category: "SOUTH INDIAN • LUNCH",page: "newlunch.html",
+    image: "curd.jpg",
+    description: "A creamy and comforting South Indian rice dish made with yogurt.",
+    video: "https://www.youtube.com/embed/c6S9skegZ1c",
+    prep: "10 mins",
+    cook: "10 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Cooked Rice", "3 cups"],
+        ["Curd / Yogurt", "2 cups"],
+        ["Milk", "½ cup"],
+        ["Green Chilli", "1"],
+        ["Ginger", "1 small piece"]
+    ],
+    preparation: "Mash the cooked rice gently and mix with curd and milk. Add the prepared seasoning and serve.",
+    steps: [
+        ["Prepare Rice", "Mash the cooked rice gently."],
+        ["Add Curd", "Mix the rice with fresh curd."],
+        ["Add Milk", "Add a little milk for a creamy texture."],
+        ["Prepare Seasoning", "Prepare the seasoning with green chilli and ginger."],
+        ["Serve", "Mix everything well and serve."]
+    ]
+},
+
+"sambar-rice": {
+    name: "Sambar Rice",
+    category: "SOUTH INDIAN • LUNCH",page: "newlunch.html",
+    image: "sambar.jpg",
+    description: "A comforting one-pot South Indian meal combining rice, dal and vegetables.",
+    video: "https://www.youtube.com/embed/k-URfLU99RQ",
+    prep: "15 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Rice", "1 cup"],
+        ["Toor Dal", "½ cup"],
+        ["Mixed Vegetables", "2 cups"],
+        ["Tomato", "2"],
+        ["Tamarind", "Small amount"]
+    ],
+    preparation: "Cook rice, dal and vegetables together with sambar ingredients until soft and well combined.",
+    steps: [
+        ["Cook Dal", "Cook the toor dal until soft."],
+        ["Cook Vegetables", "Cook the vegetables with tomato."],
+        ["Prepare Sambar", "Combine the cooked dal and vegetables."],
+        ["Add Rice", "Add cooked rice and mix well."],
+        ["Serve", "Cook for a few minutes and serve hot."]
+    ]
+},
+
+"rajma-rice": {
+    name: "Rajma Rice",
+    category: "NORTH INDIAN • LUNCH",page: "newlunch.html",
+    image: "rajma.jpg",
+    description: "A hearty North Indian meal of kidney bean curry served with steamed rice.",
+    video: "https://www.youtube.com/embed/nnvk38T-iq8",
+    prep: "20 mins",
+    cook: "35 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Rajma", "1 cup"],
+        ["Rice", "2 cups"],
+        ["Onion", "2"],
+        ["Tomato", "2"],
+        ["Ginger Garlic Paste", "1 tbsp"]
+    ],
+    preparation: "Soak and cook the rajma until soft. Prepare a tomato-onion base and combine it with the cooked beans. Serve with rice.",
+    steps: [
+        ["Soak Rajma", "Soak rajma in water before cooking."],
+        ["Cook Rajma", "Cook the rajma until soft."],
+        ["Prepare Gravy", "Cook onion, tomato and ginger garlic paste."],
+        ["Combine", "Add the cooked rajma and simmer."],
+        ["Serve", "Serve hot with steamed rice."]
+    ]
+},
+
+"veg-fried-rice": {
+    name: "Veg Fried Rice",
+    category: "INDO-CHINESE • LUNCH",page: "newlunch.html",
+    image: "friedrice.jpg",
+    description: "Flavorful fried rice tossed with colorful vegetables and cooked rice.",
+    video: "https://www.youtube.com/embed/bXgxzzNm0U8",
+    prep: "15 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Cooked Rice", "3 cups"],
+        ["Carrot", "1"],
+        ["Beans", "½ cup"],
+        ["Capsicum", "1"],
+        ["Spring Onion", "2 tbsp"]
+    ],
+    preparation: "Stir-fry the vegetables on high heat and toss them with cooked rice until everything is well combined.",
+    steps: [
+        ["Prepare Rice", "Cook the rice and allow it to cool."],
+        ["Chop Vegetables", "Chop the vegetables into small pieces."],
+        ["Stir Fry", "Stir-fry the vegetables on high heat."],
+        ["Add Rice", "Add the cooked rice and mix well."],
+        ["Serve", "Garnish with spring onion and serve."]
+    ]
+},
+
+"chicken-fried-rice": {
+    name: "Chicken Fried Rice",
+    category: "INDO-CHINESE • LUNCH",page: "newlunch.html",
+    image: "chickenrice.jpg",
+    description: "A delicious fried rice prepared with chicken and fresh vegetables.",
+    video: "https://www.youtube.com/embed/rcbCY26CLX4",
+    prep: "15 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Cooked Rice", "3 cups"],
+        ["Chicken", "300 g"],
+        ["Carrot", "1"],
+        ["Capsicum", "1"],
+        ["Spring Onion", "2 tbsp"]
+    ],
+    preparation: "Cook the chicken and vegetables separately, then toss them with cooked rice until well combined.",
+    steps: [
+        ["Cook Chicken", "Cook the chicken pieces until completely done."],
+        ["Prepare Vegetables", "Stir-fry the chopped vegetables."],
+        ["Add Chicken", "Add the cooked chicken to the vegetables."],
+        ["Add Rice", "Add cooked rice and mix everything well."],
+        ["Serve", "Garnish with spring onion and serve hot."]
+    ]
+},
+
+"paneer-butter-masala-roti": {
+    name: "Paneer Butter Masala + Roti",
+    category: "NORTH INDIAN • LUNCH",page: "newlunch.html",
+    image: "roti.jpg",
+    description: "Soft paneer cooked in a rich tomato-based gravy served with warm roti.",
+    video: "https://www.youtube.com/embed/532fW5hNi1Y",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Paneer", "250 g"],
+        ["Tomato", "3"],
+        ["Onion", "1"],
+        ["Butter", "2 tbsp"],
+        ["Roti", "8"]
+    ],
+    preparation: "Prepare a smooth tomato-based gravy, add paneer and butter, and cook until the flavors combine. Serve with roti.",
+    steps: [
+        ["Prepare Gravy", "Cook onion and tomato and prepare a smooth gravy."],
+        ["Add Paneer", "Add paneer cubes to the gravy."],
+        ["Add Butter", "Add butter and cook gently."],
+        ["Prepare Roti", "Cook fresh rotis on a hot pan."],
+        ["Serve", "Serve paneer butter masala with warm roti."]
+    ]
+},
+
+"chole-rice": {
+    name: "Chole + Rice",
+    category: "NORTH INDIAN • LUNCH",page: "newlunch.html",
+    image: "chole.jpg",
+    description: "Spiced chickpea curry served with fluffy steamed rice.",
+    video: "https://www.youtube.com/embed/dQKeBJECYoI",
+    prep: "20 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Chickpeas", "2 cups"],
+        ["Rice", "2 cups"],
+        ["Onion", "2"],
+        ["Tomato", "2"],
+        ["Ginger Garlic Paste", "1 tbsp"]
+    ],
+    preparation: "Cook the chickpeas until soft and prepare a flavorful onion-tomato gravy. Serve the chole with steamed rice.",
+    steps: [
+        ["Soak Chickpeas", "Soak chickpeas before cooking."],
+        ["Cook Chickpeas", "Cook the chickpeas until soft."],
+        ["Prepare Gravy", "Cook onion, tomato and ginger garlic paste."],
+        ["Combine", "Add chickpeas to the gravy and simmer."],
+        ["Serve", "Serve hot with steamed rice."]
+    ]
+},
+
+"vegetable-pulao": {
+    name: "Vegetable Pulao",
+    category: "INDIAN • LUNCH",
+    image: "pulao.jpg",
+    description: "Fragrant basmati rice cooked with colorful vegetables for a simple meal.",
+    video: "https://www.youtube.com/embed/8XRpoWliwGM",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Basmati Rice", "2 cups"],
+        ["Mixed Vegetables", "2 cups"],
+        ["Onion", "1"],
+        ["Green Peas", "½ cup"],
+        ["Ginger", "1 small piece"]
+    ],
+    preparation: "Cook the vegetables with onion and ginger, add soaked rice and water, then cook until the rice is fluffy.",
+    steps: [
+        ["Wash Rice", "Wash and soak the basmati rice."],
+        ["Cook Vegetables", "Cook the vegetables with onion and ginger."],
+        ["Add Rice", "Add the soaked rice and mix gently."],
+        ["Cook", "Add water and cook until the rice is fluffy."],
+        ["Serve", "Garnish and serve hot."]
+    ]
+},
+
+"chicken-curry-rice": {
+    name: "Chicken Curry + Rice",
+    category: "INDIAN • LUNCH",
+    image: "curry.jpg",
+    description: "Tender chicken cooked in a flavorful curry and served with steamed rice.",
+    video: "https://www.youtube.com/embed/AoPqKq4Wv_E",
+    prep: "20 mins",
+    cook: "35 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Chicken", "500 g"],
+        ["Rice", "2 cups"],
+        ["Onion", "2"],
+        ["Tomato", "2"],
+        ["Ginger Garlic Paste", "2 tbsp"]
+    ],
+    preparation: "Cook the chicken with onion, tomato and aromatic ingredients until tender. Serve the curry with steamed rice.",
+    steps: [
+        ["Prepare Chicken", "Clean and prepare the chicken pieces."],
+        ["Cook Base", "Cook onion, tomato and ginger garlic paste."],
+        ["Add Chicken", "Add chicken and cook with the gravy."],
+        ["Simmer", "Cover and cook until the chicken becomes tender."],
+        ["Serve", "Serve hot with steamed rice."]
+    ]
+},
+
+"dal-tadka-rice": {
+    name: "Dal Tadka + Rice",
+    category: "NORTH INDIAN • LUNCH",
+    image: "dal.jpg",
+    description: "Comforting yellow dal with a flavorful tadka served alongside steamed rice.",
+    video: "https://www.youtube.com/embed/XzKkkMdo7Jk",
+    prep: "10 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Toor Dal", "1 cup"],
+        ["Rice", "2 cups"],
+        ["Tomato", "1"],
+        ["Onion", "1"],
+        ["Ghee", "1 tbsp"]
+    ],
+    preparation: "Cook the dal until soft and prepare a simple tadka. Mix the tadka with dal and serve with rice.",
+    steps: [
+        ["Cook Dal", "Wash and cook the dal until soft."],
+        ["Prepare Rice", "Cook the rice separately."],
+        ["Prepare Tadka", "Prepare the onion and tomato tadka."],
+        ["Mix", "Add the tadka to the cooked dal."],
+        ["Serve", "Serve hot dal with steamed rice."]
+    ]
+},
+
+"veg-noodles": {
+    name: "Veg Noodles",
+    category: "INDO-CHINESE • LUNCH",
+    image: "noodle.jpg",
+    description: "Quick and tasty noodles tossed with colorful vegetables.",
+    video: "https://www.youtube.com/embed/xWZeQBLV6q4",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Noodles", "400 g"],
+        ["Carrot", "1"],
+        ["Capsicum", "1"],
+        ["Cabbage", "1 cup"],
+        ["Spring Onion", "2 tbsp"]
+    ],
+    preparation: "Boil the noodles and stir-fry them with fresh vegetables until everything is well combined.",
+    steps: [
+        ["Boil Noodles", "Cook the noodles according to the package instructions."],
+        ["Prepare Vegetables", "Slice the vegetables into thin pieces."],
+        ["Stir Fry", "Stir-fry the vegetables on high heat."],
+        ["Add Noodles", "Add the cooked noodles and mix well."],
+        ["Serve", "Garnish with spring onion and serve hot."]
+    ]
+},
+"roti-dal": {
+    name: "Roti + Dal",
+    category: "INDIAN • DINNER",
+    image: "rotidal.jpg",
+    description: "A simple and comforting combination of soft roti and nutritious dal.",
+    video: "https://www.youtube.com/embed/No_5EYvEH-0",
+    prep: "10 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Wheat Flour", "2 cups"],
+        ["Toor Dal", "1 cup"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Prepare a soft wheat dough for roti and cook the dal with tomato and onion until soft and flavorful.",
+    steps: [
+        ["Prepare Dough", "Mix wheat flour with water and prepare a soft dough."],
+        ["Prepare Dal", "Wash and cook the dal until soft."],
+        ["Prepare Gravy", "Cook onion, tomato and green chilli."],
+        ["Combine", "Mix the cooked dal with the prepared gravy."],
+        ["Serve", "Cook the rotis on a hot pan and serve with dal."]
+    ]
+},
+
+"aloo-gobi": {
+    name: "Aloo Gobi",
+    category: "NORTH INDIAN • DINNER",
+    image: "alogobi.jpg",
+    description: "A flavorful North Indian vegetable dish made with potatoes and cauliflower.",
+    video: "https://www.youtube.com/embed/YyfkOpgNL_Q",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Potatoes", "3"],
+        ["Cauliflower", "1 medium"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Cook potatoes and cauliflower with onion and tomato until tender and flavorful.",
+    steps: [
+        ["Prepare Vegetables", "Wash and cut potatoes and cauliflower into pieces."],
+        ["Cook Onion", "Cook chopped onion until soft."],
+        ["Add Tomato", "Add chopped tomatoes and green chilli."],
+        ["Add Vegetables", "Add potatoes and cauliflower and cook until tender."],
+        ["Serve", "Garnish with coriander leaves and serve hot."]
+    ]
+},
+
+"palak-paneer": {
+    name: "Palak Paneer",
+    category: "NORTH INDIAN • DINNER",
+    image: "palak.jpg",
+    description: "Soft paneer cubes cooked in a smooth and flavorful spinach gravy.",
+    video: "https://www.youtube.com/embed/cRsAQeR5dbI",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Spinach", "500 g"],
+        ["Paneer", "250 g"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Green Chilli", "2"],
+        ["Ginger", "1 small piece"]
+    ],
+    preparation: "Blanch and blend the spinach into a smooth puree. Cook it with onion and tomato, then add paneer cubes.",
+    steps: [
+        ["Prepare Spinach", "Wash and blanch the spinach."],
+        ["Make Puree", "Blend the spinach into a smooth puree."],
+        ["Prepare Gravy", "Cook onion, tomato and ginger."],
+        ["Add Spinach", "Add the spinach puree and cook gently."],
+        ["Add Paneer", "Add paneer cubes and simmer before serving."]
+    ]
+},
+
+"vegetable-manchurian": {
+    name: "Vegetable Manchurian",
+    category: "INDO-CHINESE • DINNER",
+    image: "vegman.jpg",
+    description: "Crispy vegetable balls cooked in a flavorful Indo-Chinese sauce.",
+    video: "https://www.youtube.com/embed/zSYmtXhs_oA",
+    prep: "20 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Cabbage", "1 cup"],
+        ["Carrot", "1"],
+        ["Capsicum", "1"],
+        ["Corn Flour", "3 tbsp"],
+        ["Spring Onion", "2 tbsp"],
+        ["Soy Sauce", "1 tbsp"]
+    ],
+    preparation: "Prepare vegetable balls, cook them until golden and toss them with a flavorful sauce.",
+    steps: [
+        ["Prepare Vegetables", "Finely chop the cabbage, carrot and capsicum."],
+        ["Make Balls", "Mix the vegetables with corn flour and shape into small balls."],
+        ["Cook Balls", "Cook the vegetable balls until golden."],
+        ["Prepare Sauce", "Cook the vegetables with soy sauce."],
+        ["Combine", "Add the vegetable balls to the sauce and serve."]
+    ]
+},
+
+"chicken-tikka": {
+    name: "Chicken Tikka",
+    category: "NORTH INDIAN • DINNER",
+    image: "tikka.jpg",
+    description: "Tender chicken pieces marinated with yogurt and flavorful ingredients.",
+    video: "https://www.youtube.com/embed/6No7g2GptXY",
+    prep: "30 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Chicken", "500 g"],
+        ["Yogurt", "½ cup"],
+        ["Lemon", "1"],
+        ["Ginger Garlic Paste", "1 tbsp"],
+        ["Capsicum", "1"],
+        ["Onion", "1"]
+    ],
+    preparation: "Marinate chicken pieces with yogurt and other ingredients, then cook until completely done.",
+    steps: [
+        ["Prepare Marinade", "Mix yogurt, lemon juice and ginger garlic paste."],
+        ["Marinate Chicken", "Coat the chicken pieces with the marinade."],
+        ["Add Vegetables", "Prepare onion and capsicum pieces."],
+        ["Cook", "Cook the marinated chicken and vegetables until completely done."],
+        ["Serve", "Serve the chicken tikka hot."]
+    ]
+},
+
+"fish-curry": {
+    name: "Fish Curry",
+    category: "INDIAN • DINNER",
+    image: "fishcurry.jpg",
+    description: "A flavorful fish curry prepared with a rich and aromatic gravy.",
+    video: "https://www.youtube.com/embed/Iv73ADD_lok",
+    prep: "15 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Fish", "500 g"],
+        ["Tomato", "2"],
+        ["Onion", "1"],
+        ["Tamarind", "Small amount"],
+        ["Coconut Milk", "1 cup"]
+    ],
+    preparation: "Prepare a flavorful gravy and cook the fish gently until it is completely done.",
+    steps: [
+        ["Prepare Fish", "Clean and prepare the fish pieces."],
+        ["Prepare Gravy", "Cook onion and tomato until soft."],
+        ["Add Tamarind", "Add tamarind and coconut milk to the gravy."],
+        ["Add Fish", "Place the fish pieces into the gravy."],
+        ["Cook", "Cook gently until the fish is completely done and serve."]
+    ]
+},
+
+"egg-kothu-parotta": {
+    name: "Egg Kothu Parotta",
+    category: "SOUTH INDIAN • DINNER",
+    image: "eggkothu.jpg",
+    description: "Chopped parotta cooked with eggs, vegetables and flavorful ingredients.",
+    video: "https://www.youtube.com/embed/9dHq3J8msMk",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Parotta", "4"],
+        ["Eggs", "3"],
+        ["Onion", "1"],
+        ["Tomato", "1"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Chop the parotta into small pieces and cook it together with eggs and vegetables.",
+    steps: [
+        ["Chop Parotta", "Cut the parotta into small pieces."],
+        ["Cook Vegetables", "Cook onion, tomato and green chilli."],
+        ["Add Eggs", "Add the eggs and cook until done."],
+        ["Add Parotta", "Add the chopped parotta and mix well."],
+        ["Serve", "Garnish with coriander leaves and serve hot."]
+    ]
+},
+
+"mushroom-curry": {
+    name: "Mushroom Curry",
+    category: "INDIAN • DINNER",
+    image: "mcurry.jpg",
+    description: "A delicious mushroom curry cooked in a flavorful onion and tomato gravy.",
+    video: "https://www.youtube.com/embed/SIrhHX6kbY8",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Mushrooms", "300 g"],
+        ["Onion", "2"],
+        ["Tomato", "2"],
+        ["Green Chilli", "2"],
+        ["Coconut Milk", "½ cup"]
+    ],
+    preparation: "Cook mushrooms with onion and tomato and finish with coconut milk for a creamy curry.",
+    steps: [
+        ["Clean Mushrooms", "Clean and slice the mushrooms."],
+        ["Cook Onion", "Cook chopped onion until soft."],
+        ["Add Tomato", "Add tomatoes and green chilli."],
+        ["Add Mushrooms", "Add mushrooms and cook until tender."],
+        ["Finish Curry", "Add coconut milk and simmer before serving."]
+    ]
+},
+
+"vegetable-stew": {
+    name: "Vegetable Stew",
+    category: "KERALA • DINNER",
+    image: "vegstew.jpg",
+    description: "A mild and creamy vegetable stew prepared with coconut milk.",
+    video: "https://www.youtube.com/embed/-NSppaoxGwY",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Potatoes", "2"],
+        ["Carrot", "1"],
+        ["Beans", "1 cup"],
+        ["Green Peas", "½ cup"],
+        ["Coconut Milk", "2 cups"]
+    ],
+    preparation: "Cook the vegetables gently and add coconut milk to prepare a mild and creamy stew.",
+    steps: [
+        ["Prepare Vegetables", "Wash and cut all the vegetables."],
+        ["Cook Vegetables", "Cook the vegetables until tender."],
+        ["Add Coconut Milk", "Add coconut milk to the cooked vegetables."],
+        ["Simmer", "Simmer gently until the flavors combine."],
+        ["Serve", "Serve warm with suitable bread or rice."]
+    ]
+},
+
+"stuffed-bell-peppers": {
+    name: "Stuffed Bell Peppers",
+    category: "CONTINENTAL • DINNER",
+    image: "bellpepper.jpg",
+    description: "Colorful bell peppers filled with a flavorful vegetable and rice mixture.",
+    video: "https://www.youtube.com/embed/w1a1TM30lrg",
+    prep: "20 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Bell Peppers", "4"],
+        ["Cooked Rice", "2 cups"],
+        ["Onion", "1"],
+        ["Carrot", "1"],
+        ["Corn", "½ cup"],
+        ["Cheese", "½ cup"]
+    ],
+    preparation: "Prepare a vegetable and rice filling, stuff it inside bell peppers and cook until tender.",
+    steps: [
+        ["Prepare Peppers", "Wash the bell peppers and remove the tops and seeds."],
+        ["Prepare Filling", "Mix cooked rice with vegetables."],
+        ["Stuff Peppers", "Fill each bell pepper with the prepared mixture."],
+        ["Add Cheese", "Add a little cheese on top."],
+        ["Cook", "Cook until the peppers become tender and serve."]
+    ]
+},
+
+"macaroni": {
+    name: "Macaroni",
+    category: "CONTINENTAL • DINNER",
+    image: "macaroni.jpg",
+    description: "A simple and tasty macaroni dish cooked with vegetables and a flavorful sauce.",
+    video: "https://www.youtube.com/embed/VU6N5YxWRAE",
+    prep: "10 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Macaroni", "2 cups"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Capsicum", "1"],
+        ["Carrot", "1"],
+        ["Cheese", "½ cup"]
+    ],
+    preparation: "Boil the macaroni and combine it with cooked vegetables and sauce.",
+    steps: [
+        ["Boil Macaroni", "Cook macaroni until tender."],
+        ["Prepare Vegetables", "Chop and cook the vegetables."],
+        ["Prepare Sauce", "Cook tomatoes and prepare a smooth sauce."],
+        ["Combine", "Add macaroni and vegetables to the sauce."],
+        ["Serve", "Add cheese and serve warm."]
+    ]
+},
+
+"lasagna": {
+    name: "Lasagna",
+    category: "ITALIAN • DINNER",
+    image: "lasagna.jpg",
+    description: "A delicious layered pasta dish with vegetables, sauce and cheese.",
+    video: "https://www.youtube.com/embed/XjozbaVFTS4",
+    prep: "25 mins",
+    cook: "40 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Lasagna Sheets", "8"],
+        ["Tomato Sauce", "2 cups"],
+        ["Mixed Vegetables", "2 cups"],
+        ["Cheese", "2 cups"],
+        ["Onion", "1"]
+    ],
+    preparation: "Prepare the vegetable sauce and arrange layers of pasta, sauce and cheese before cooking until the cheese melts.",
+    steps: [
+        ["Prepare Sauce", "Cook the vegetables with tomato sauce."],
+        ["Prepare Sheets", "Cook the lasagna sheets as required."],
+        ["Create Layers", "Arrange pasta sheets, sauce and cheese in layers."],
+        ["Cook", "Cook until the layers are hot and the cheese melts."],
+        ["Serve", "Allow it to cool slightly and serve."]
+    ]
+},
+
+"tacos": {
+    name: "Tacos",
+    category: "MEXICAN • DINNER",
+    image: "tacos.webp",
+    description: "Crunchy tacos filled with vegetables, beans and fresh toppings.",
+    video: "https://www.youtube.com/embed/044bH1qgiZI",
+    prep: "15 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Taco Shells", "8"],
+        ["Beans", "1 cup"],
+        ["Tomato", "1"],
+        ["Onion", "1"],
+        ["Capsicum", "1"],
+        ["Cheese", "½ cup"]
+    ],
+    preparation: "Prepare the vegetable and bean filling and place it inside taco shells with fresh toppings.",
+    steps: [
+        ["Prepare Filling", "Cook beans with chopped vegetables."],
+        ["Prepare Toppings", "Chop tomato, onion and capsicum."],
+        ["Heat Shells", "Warm the taco shells."],
+        ["Fill Tacos", "Add the bean and vegetable filling."],
+        ["Serve", "Add cheese and fresh toppings before serving."]
+    ]
+},
+
+"burrito": {
+    name: "Burrito",
+    category: "MEXICAN • DINNER",
+    image: "burrito.jpg",
+    description: "A soft tortilla wrap filled with rice, beans, vegetables and cheese.",
+    video: "https://www.youtube.com/embed/dzfQU3mXFSw",
+    prep: "15 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Tortilla", "4"],
+        ["Cooked Rice", "2 cups"],
+        ["Beans", "1 cup"],
+        ["Capsicum", "1"],
+        ["Tomato", "1"],
+        ["Cheese", "½ cup"]
+    ],
+    preparation: "Prepare the rice and bean filling, place it inside tortillas and roll them into burritos.",
+    steps: [
+        ["Prepare Rice", "Cook and prepare the rice."],
+        ["Prepare Filling", "Cook beans with vegetables."],
+        ["Warm Tortilla", "Warm the tortillas gently."],
+        ["Fill and Roll", "Add rice, beans, vegetables and cheese, then roll tightly."],
+        ["Serve", "Serve the burrito warm."]
+    ]
+},
+
+"falafel-wrap": {
+    name: "Falafel Wrap",
+    category: "MIDDLE EASTERN • DINNER",
+    image: "falafel-wrap-2.jpg",
+    description: "A flavorful wrap filled with falafel, fresh vegetables and a creamy sauce.",
+    video: "https://www.youtube.com/embed/U9fhx1odgHA",
+    prep: "20 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Chickpeas", "2 cups"],
+        ["Wrap Bread", "4"],
+        ["Onion", "1"],
+        ["Tomato", "1"],
+        ["Cucumber", "1"],
+        ["Yogurt", "½ cup"]
+    ],
+    preparation: "Prepare chickpea falafel, cook until golden and place them inside wrap bread with fresh vegetables and yogurt sauce.",
+    steps: [
+        ["Prepare Chickpeas", "Soak and prepare the chickpeas for the falafel mixture."],
+        ["Make Falafel", "Shape the mixture into small falafel pieces."],
+        ["Cook Falafel", "Cook the falafel until completely done and golden."],
+        ["Prepare Wrap", "Place vegetables and falafel inside the wrap bread."],
+        ["Serve", "Add yogurt sauce, roll the wrap and serve."]
+    ]
+},
+"samosa": {
+    name: "Samosa",
+    category: "INDIAN • SNACK",
+    image: "samosa.jpg",
+    description: "A crispy and flavorful snack filled with spiced potatoes and peas.",
+    video: "https://www.youtube.com/embed/cN7paRwBbrY",
+    prep: "25 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["All-Purpose Flour", "2 cups"],
+        ["Potatoes", "3"],
+        ["Green Peas", "½ cup"],
+        ["Onion", "1"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Prepare a soft dough and fill it with a spiced potato and pea mixture before cooking until crisp.",
+    steps: [
+        ["Prepare Dough", "Mix flour with water and prepare a soft dough."],
+        ["Prepare Filling", "Cook mashed potatoes with peas, onion and green chilli."],
+        ["Shape Samosa", "Roll the dough and shape it into samosa cones."],
+        ["Add Filling", "Fill each cone with the prepared potato mixture."],
+        ["Cook", "Cook the samosas until crisp and golden."]
+    ]
+},
+
+"pakora": {
+    name: "Pakora",
+    category: "INDIAN • SNACK",
+    image: "pakora.jpg",
+    description: "Crispy vegetable fritters made with gram flour and fresh vegetables.",
+    video: "https://www.youtube.com/embed/qfZ3axZV48A",
+    prep: "15 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Gram Flour", "1 cup"],
+        ["Onion", "2"],
+        ["Potato", "1"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"],
+        ["Water", "As required"]
+    ],
+    preparation: "Mix vegetables with gram flour and prepare small portions before cooking until crisp.",
+    steps: [
+        ["Prepare Vegetables", "Slice onion and potato into thin pieces."],
+        ["Prepare Batter", "Mix gram flour with vegetables and a little water."],
+        ["Make Portions", "Take small portions of the mixture."],
+        ["Cook", "Cook until the pakoras become crisp and golden."],
+        ["Serve", "Serve hot with a suitable dip."]
+    ]
+},
+
+"murukku": {
+    name: "Murukku",
+    category: "SOUTH INDIAN • SNACK",
+    image: "murukku.jpg",
+    description: "A traditional South Indian crispy snack made with rice flour and gram flour.",
+    video: "https://www.youtube.com/embed/7gM981fkqx4",
+    prep: "25 mins",
+    cook: "20 mins",
+    servings: "6 People",
+    ingredients: [
+        ["Rice Flour", "2 cups"],
+        ["Gram Flour", "½ cup"],
+        ["Butter", "2 tbsp"],
+        ["Water", "As required"],
+        ["Sesame Seeds", "1 tbsp"]
+    ],
+    preparation: "Prepare a soft dough with rice flour and gram flour, shape it into spirals and cook until crisp.",
+    steps: [
+        ["Prepare Mixture", "Mix rice flour, gram flour, butter and sesame seeds."],
+        ["Prepare Dough", "Add water and prepare a soft dough."],
+        ["Shape Murukku", "Shape the dough into spiral murukku using a murukku press."],
+        ["Cook", "Cook until crisp and golden."],
+        ["Serve", "Allow to cool before serving."]
+    ]
+},
+
+"aloo-tikki": {
+    name: "Aloo Tikki",
+    category: "NORTH INDIAN • SNACK",
+    image: "tikki.jpg",
+    description: "Crispy potato patties seasoned with flavorful ingredients.",
+    video: "https://www.youtube.com/embed/BrYPnqA7eIg",
+    prep: "20 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Potatoes", "4"],
+        ["Green Peas", "½ cup"],
+        ["Bread Crumbs", "½ cup"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"],
+        ["Lemon", "1"]
+    ],
+    preparation: "Prepare a potato mixture, shape it into small patties and cook until crisp.",
+    steps: [
+        ["Boil Potatoes", "Boil and mash the potatoes."],
+        ["Prepare Mixture", "Mix potatoes with peas, chilli and coriander."],
+        ["Shape Tikki", "Shape the mixture into flat round patties."],
+        ["Cook", "Cook the patties until golden and crisp."],
+        ["Serve", "Serve hot with a suitable chutney."]
+    ]
+},
+
+"cutlet": {
+    name: "Vegetable Cutlet",
+    category: "INDIAN • SNACK",
+    image: "cutlet.jpg",
+    description: "Crispy vegetable cutlets made with potatoes and mixed vegetables.",
+    video: "https://www.youtube.com/embed/57uvB-nQOFY",
+    prep: "25 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Potatoes", "3"],
+        ["Carrot", "1"],
+        ["Beans", "½ cup"],
+        ["Green Peas", "½ cup"],
+        ["Bread Crumbs", "1 cup"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Prepare a vegetable mixture, shape it into cutlets and cook until crisp.",
+    steps: [
+        ["Boil Vegetables", "Cook potatoes and other vegetables until tender."],
+        ["Prepare Mixture", "Mash the vegetables and mix well."],
+        ["Shape Cutlets", "Shape the mixture into flat cutlets."],
+        ["Coat", "Coat the cutlets with bread crumbs."],
+        ["Cook", "Cook until golden and crisp."]
+    ]
+},
+
+"spring-rolls": {
+    name: "Spring Rolls",
+    category: "INDO-CHINESE • SNACK",
+    image: "spring.jpg",
+    description: "Crispy rolls filled with colorful vegetables.",
+    video: "https://www.youtube.com/embed/wNB05Zc4TqA",
+    prep: "25 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Spring Roll Sheets", "8"],
+        ["Cabbage", "1 cup"],
+        ["Carrot", "1"],
+        ["Capsicum", "1"],
+        ["Spring Onion", "2 tbsp"],
+        ["Soy Sauce", "1 tbsp"]
+    ],
+    preparation: "Prepare a vegetable filling, place it inside spring roll sheets and cook until crisp.",
+    steps: [
+        ["Prepare Vegetables", "Slice cabbage, carrot and capsicum."],
+        ["Cook Filling", "Cook the vegetables with spring onion and soy sauce."],
+        ["Fill Sheets", "Place the vegetable mixture inside spring roll sheets."],
+        ["Roll", "Fold and roll the sheets tightly."],
+        ["Cook", "Cook until golden and crisp."]
+    ]
+},
+
+"french-fries": {
+    name: "French Fries",
+    category: "CONTINENTAL • SNACK",
+    image: "fries.jpg",
+    description: "Crispy golden potato fries that make a simple and tasty snack.",
+    video: "https://www.youtube.com/embed/BCFoDfESF3Y",
+    prep: "15 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Potatoes", "4"],
+        ["Water", "As required"],
+        ["Salt", "To taste"]
+    ],
+    preparation: "Cut potatoes into thin strips and cook until crisp and golden.",
+    steps: [
+        ["Cut Potatoes", "Wash and cut potatoes into thin strips."],
+        ["Soak", "Soak the potato strips in water briefly."],
+        ["Dry", "Drain and dry the potato strips."],
+        ["Cook", "Cook until crisp and golden."],
+        ["Serve", "Serve warm."]
+    ]
+},
+
+"corn-cheese-balls": {
+    name: "Corn Cheese Balls",
+    category: "SNACK • CHEESY",
+    image: "Cheese-corn-ball.jpeg",
+    description: "Crispy snack balls filled with sweet corn and melted cheese.",
+    video: "https://www.youtube.com/embed/Sa4DCoS4ed0",
+    prep: "20 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Sweet Corn", "1 cup"],
+        ["Cheese", "1 cup"],
+        ["Potato", "2"],
+        ["Bread Crumbs", "1 cup"],
+        ["Corn Flour", "2 tbsp"]
+    ],
+    preparation: "Mix corn, cheese and potato, shape into balls and cook until crisp.",
+    steps: [
+        ["Prepare Corn", "Cook and mash the sweet corn."],
+        ["Make Mixture", "Mix corn with mashed potato and cheese."],
+        ["Shape Balls", "Shape the mixture into small balls."],
+        ["Coat", "Coat the balls with bread crumbs."],
+        ["Cook", "Cook until golden and crisp."]
+    ]
+},
+
+"bread-rolls": {
+    name: "Bread Rolls",
+    category: "INDIAN • SNACK",
+    image: "breadroll.jpg",
+    description: "Crispy bread rolls filled with a flavorful potato mixture.",
+    video: "https://www.youtube.com/embed/Er4sfSUyafM",
+    prep: "20 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Bread Slices", "8"],
+        ["Potatoes", "3"],
+        ["Green Peas", "½ cup"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Prepare a potato filling, wrap it with bread slices and cook until crisp.",
+    steps: [
+        ["Prepare Filling", "Mash potatoes and mix with peas and chilli."],
+        ["Prepare Bread", "Remove the edges from the bread slices."],
+        ["Add Filling", "Place the potato mixture on each bread slice."],
+        ["Shape Rolls", "Roll the bread around the filling."],
+        ["Cook", "Cook until crisp and golden."]
+    ]
+},
+
+"dhokla": {
+    name: "Dhokla",
+    category: "GUJARATI • SNACK",
+    image: "dokla.jpg",
+    description: "A soft and light steamed snack made from a gram flour batter.",
+    video: "https://www.youtube.com/embed/ONrkIBvLqhY",
+    prep: "15 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Gram Flour", "2 cups"],
+        ["Curd", "½ cup"],
+        ["Water", "As required"],
+        ["Lemon Juice", "1 tbsp"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Prepare a smooth batter and steam it until soft and fluffy.",
+    steps: [
+        ["Prepare Batter", "Mix gram flour, curd and water into a smooth batter."],
+        ["Add Lemon", "Add lemon juice and mix well."],
+        ["Prepare Steamer", "Heat the steamer."],
+        ["Steam", "Steam the batter until soft and cooked."],
+        ["Serve", "Cut into pieces and garnish with coriander."]
+    ]
+},
+
+"kachori": {
+    name: "Kachori",
+    category: "NORTH INDIAN • SNACK",
+    image: "kachori.jpg",
+    description: "A crispy stuffed snack with a flavorful filling.",
+    video: "https://www.youtube.com/embed/13_FNPq6pzQ",
+    prep: "25 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["All-Purpose Flour", "2 cups"],
+        ["Moong Dal", "1 cup"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"],
+        ["Water", "As required"]
+    ],
+    preparation: "Prepare the dough and flavorful filling, stuff the dough and cook until crisp.",
+    steps: [
+        ["Prepare Dough", "Mix flour with water and prepare a soft dough."],
+        ["Prepare Filling", "Cook moong dal with suitable seasonings."],
+        ["Stuff", "Fill small dough portions with the prepared mixture."],
+        ["Shape", "Seal and flatten each kachori."],
+        ["Cook", "Cook until crisp and golden."]
+    ]
+},
+
+"bhel-puri": {
+    name: "Bhel Puri",
+    category: "MUMBAI • SNACK",
+    image: "bhelpuri.jpg",
+    description: "A crunchy and tangy snack made with puffed rice and fresh vegetables.",
+    video: "https://www.youtube.com/embed/c-hjrGHQyAs",
+    prep: "15 mins",
+    cook: "5 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Puffed Rice", "4 cups"],
+        ["Onion", "1"],
+        ["Tomato", "1"],
+        ["Potato", "1"],
+        ["Coriander Leaves", "2 tbsp"],
+        ["Lemon", "1"]
+    ],
+    preparation: "Mix puffed rice with vegetables and fresh ingredients to prepare a crunchy snack.",
+    steps: [
+        ["Prepare Vegetables", "Finely chop onion, tomato and coriander."],
+        ["Prepare Potato", "Boil and chop the potato."],
+        ["Mix Ingredients", "Add vegetables and potato to puffed rice."],
+        ["Add Lemon", "Add lemon juice and mix gently."],
+        ["Serve", "Serve immediately while crispy."]
+    ]
+},
+
+"pani-puri": {
+    name: "Pani Puri",
+    category: "INDIAN • STREET FOOD",
+    image: "pani.png",
+    description: "Crispy puris filled with potato, peas and flavorful pani.",
+    video: "https://www.youtube.com/embed/S5KPYMh9QOQ",
+    prep: "25 mins",
+    cook: "10 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Puri", "20"],
+        ["Potatoes", "2"],
+        ["Green Peas", "½ cup"],
+        ["Mint Leaves", "½ cup"],
+        ["Coriander Leaves", "½ cup"],
+        ["Water", "As required"]
+    ],
+    preparation: "Prepare the potato filling and flavorful mint-coriander water, then fill the puris before serving.",
+    steps: [
+        ["Prepare Filling", "Boil and mash potatoes with peas."],
+        ["Prepare Pani", "Blend mint and coriander with water."],
+        ["Prepare Puris", "Make a small opening in each puri."],
+        ["Fill", "Add potato filling inside the puris."],
+        ["Serve", "Add pani and serve immediately."]
+    ]
+},
+
+"masala-corn": {
+    name: "Masala Corn",
+    category: "INDIAN • SNACK",
+    image: "masalcorn.jpg",
+    description: "Sweet corn mixed with fresh lemon and flavorful ingredients.",
+    video: "https://www.youtube.com/embed/fj05qMM4tqw",
+    prep: "5 mins",
+    cook: "10 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Sweet Corn", "2 cups"],
+        ["Butter", "1 tbsp"],
+        ["Lemon", "1"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Cook the sweet corn and mix it with butter, lemon and fresh coriander.",
+    steps: [
+        ["Cook Corn", "Cook the sweet corn until tender."],
+        ["Add Butter", "Mix the warm corn with butter."],
+        ["Add Lemon", "Add fresh lemon juice."],
+        ["Add Coriander", "Add chopped coriander leaves."],
+        ["Serve", "Serve warm."]
+    ]
+},
+
+"onion-rings": {
+    name: "Onion Rings",
+    category: "CONTINENTAL • SNACK",
+    image: "onionrings.jpg",
+    description: "Crispy onion rings coated with a light batter.",
+    video: "https://www.youtube.com/embed/qmvRD3cF1_g",
+    prep: "15 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Onions", "3"],
+        ["All-Purpose Flour", "1 cup"],
+        ["Corn Flour", "2 tbsp"],
+        ["Bread Crumbs", "1 cup"],
+        ["Water", "As required"]
+    ],
+    preparation: "Slice onions into rings, coat them with batter and bread crumbs, then cook until crisp.",
+    steps: [
+        ["Slice Onions", "Peel and cut onions into rings."],
+        ["Prepare Batter", "Mix flour and corn flour with water."],
+        ["Coat Rings", "Dip onion rings into the batter and coat with bread crumbs."],
+        ["Cook", "Cook until golden and crisp."],
+        ["Serve", "Serve warm with a suitable dip."]
+    ]
+},
+"gulab-jamun": {
+    name: "Gulab Jamun",
+    category: "INDIAN • DESSERT",
+    image: "jamun.jpg",
+    description: "Soft and delicious milk-based sweet soaked in a fragrant sugar syrup.",
+    video: "https://www.youtube.com/embed/J3O0ZEJYLFQ",
+    prep: "20 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Milk Powder", "1 cup"],
+        ["All-Purpose Flour", "3 tbsp"],
+        ["Milk", "½ cup"],
+        ["Ghee", "1 tbsp"],
+        ["Sugar", "1½ cups"],
+        ["Water", "2 cups"]
+    ],
+    preparation: "Prepare a soft dough, shape small balls, cook them until golden and soak them in sugar syrup.",
+    steps: [
+        ["Prepare Dough", "Mix milk powder, flour, ghee and milk to form a soft dough."],
+        ["Shape Balls", "Make small smooth balls from the dough."],
+        ["Cook", "Cook the balls until golden."],
+        ["Prepare Syrup", "Boil sugar and water to prepare the syrup."],
+        ["Soak", "Place the cooked balls in warm sugar syrup."]
+    ]
+},
+
+"rasgulla": {
+    name: "Rasgulla",
+    category: "BENGALI • DESSERT",
+    image: "rasagulla.webp",
+    description: "Soft and spongy cottage cheese balls cooked in light sugar syrup.",
+    video: "https://www.youtube.com/embed/GhoPXT-bsVo",
+    prep: "25 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Milk", "1 litre"],
+        ["Lemon Juice", "2 tbsp"],
+        ["Sugar", "2 cups"],
+        ["Water", "4 cups"],
+        ["Cardamom", "2"]
+    ],
+    preparation: "Prepare fresh cottage cheese, shape it into balls and cook them in sugar syrup.",
+    steps: [
+        ["Prepare Paneer", "Boil milk and add lemon juice to separate the curds."],
+        ["Make Chhena", "Drain and knead the cottage cheese until smooth."],
+        ["Shape Balls", "Make small smooth balls."],
+        ["Prepare Syrup", "Boil sugar and water together."],
+        ["Cook", "Cook the balls in the syrup until soft and spongy."]
+    ]
+},
+
+"jalebi": {
+    name: "Jalebi",
+    category: "INDIAN • DESSERT",
+    image: "jalebi.webp",
+    description: "Crispy spiral-shaped sweet soaked in delicious sugar syrup.",
+    video: "https://www.youtube.com/embed/CS9CaBrXTRM",
+    prep: "30 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["All-Purpose Flour", "1 cup"],
+        ["Curd", "2 tbsp"],
+        ["Water", "As required"],
+        ["Sugar", "2 cups"],
+        ["Lemon Juice", "1 tsp"]
+    ],
+    preparation: "Prepare the batter, shape spiral jalebis and cook them before soaking in sugar syrup.",
+    steps: [
+        ["Prepare Batter", "Mix flour, curd and water into a smooth batter."],
+        ["Rest Batter", "Allow the batter to rest."],
+        ["Prepare Syrup", "Prepare sugar syrup with sugar and water."],
+        ["Shape Jalebi", "Make spiral shapes using the batter."],
+        ["Soak", "Cook until crisp and soak in warm sugar syrup."]
+    ]
+},
+
+"kheer": {
+    name: "Kheer",
+    category: "INDIAN • DESSERT",
+    image: "kheer.webp",
+    description: "A creamy traditional rice pudding prepared with milk and rice.",
+    video: "https://www.youtube.com/embed/835sLyEmqSI",
+    prep: "10 mins",
+    cook: "35 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Rice", "½ cup"],
+        ["Milk", "1 litre"],
+        ["Sugar", "½ cup"],
+        ["Cashews", "2 tbsp"],
+        ["Raisins", "2 tbsp"],
+        ["Cardamom", "2"]
+    ],
+    preparation: "Cook rice slowly in milk until creamy and add sugar and dry fruits.",
+    steps: [
+        ["Wash Rice", "Wash the rice thoroughly."],
+        ["Heat Milk", "Bring milk to a gentle boil."],
+        ["Cook Rice", "Add rice and cook until soft."],
+        ["Add Sugar", "Add sugar and cardamom."],
+        ["Garnish", "Add roasted cashews and raisins before serving."]
+    ]
+},
+
+"carrot-halwa": {
+    name: "Carrot Halwa",
+    category: "INDIAN • DESSERT",
+    image: "carrot.jpg",
+    description: "A rich and delicious dessert made with grated carrots, milk and dry fruits.",
+    video: "https://www.youtube.com/embed/TNYeJKbHcqk",
+    prep: "15 mins",
+    cook: "40 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Carrots", "500 g"],
+        ["Milk", "2 cups"],
+        ["Sugar", "½ cup"],
+        ["Ghee", "2 tbsp"],
+        ["Cashews", "2 tbsp"],
+        ["Cardamom", "2"]
+    ],
+    preparation: "Cook grated carrots with milk and sugar until soft and finish with ghee and dry fruits.",
+    steps: [
+        ["Grate Carrots", "Wash and grate the carrots."],
+        ["Cook Carrots", "Cook the carrots with milk."],
+        ["Add Sugar", "Add sugar and cook until the mixture thickens."],
+        ["Add Ghee", "Add ghee and cardamom."],
+        ["Garnish", "Add cashews and serve warm."]
+    ]
+},
+
+"shahi-tukda": {
+    name: "Shahi Tukda",
+    category: "INDIAN • DESSERT",
+    image: "shahi.jpg",
+    description: "A rich bread dessert topped with creamy milk and dry fruits.",
+    video: "https://www.youtube.com/embed/mcxq8zgeqbE",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Bread", "6 slices"],
+        ["Milk", "1 litre"],
+        ["Sugar", "½ cup"],
+        ["Ghee", "2 tbsp"],
+        ["Cashews", "2 tbsp"],
+        ["Almonds", "2 tbsp"]
+    ],
+    preparation: "Cook bread slices until golden and serve them with thickened sweetened milk.",
+    steps: [
+        ["Prepare Bread", "Cut bread slices into suitable pieces."],
+        ["Cook Bread", "Cook the bread until golden."],
+        ["Prepare Milk", "Boil milk until it becomes slightly thick."],
+        ["Add Sugar", "Add sugar and mix well."],
+        ["Serve", "Place bread on a plate and pour the sweetened milk over it."]
+    ]
+},
+
+"rasmalai": {
+    name: "Rasmalai",
+    category: "BENGALI • DESSERT",
+    image: "Rasmalai.jpg",
+    description: "Soft cottage cheese discs soaked in sweet and creamy milk.",
+    video: "https://www.youtube.com/embed/5cLdNM6xH7s",
+    prep: "30 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Milk", "1 litre"],
+        ["Paneer", "250 g"],
+        ["Sugar", "½ cup"],
+        ["Cardamom", "2"],
+        ["Almonds", "2 tbsp"]
+    ],
+    preparation: "Prepare soft paneer discs and soak them in sweetened thick milk.",
+    steps: [
+        ["Prepare Paneer", "Prepare soft paneer and knead until smooth."],
+        ["Shape Discs", "Shape the paneer into small discs."],
+        ["Cook Discs", "Cook the discs in light sugar syrup."],
+        ["Prepare Milk", "Boil milk and add sugar and cardamom."],
+        ["Soak", "Place the cooked discs in the sweet milk."]
+    ]
+},
+
+"kulfi": {
+    name: "Kulfi",
+    category: "INDIAN • DESSERT",
+    image: "kulfi.jpg",
+    description: "A creamy traditional Indian frozen dessert made with thickened milk.",
+    video: "https://www.youtube.com/embed/f6D7A6-QNl8",
+    prep: "15 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Milk", "1 litre"],
+        ["Sugar", "½ cup"],
+        ["Cardamom", "2"],
+        ["Almonds", "2 tbsp"],
+        ["Pistachios", "2 tbsp"]
+    ],
+    preparation: "Reduce milk until creamy, add sugar and nuts, then freeze until firm.",
+    steps: [
+        ["Boil Milk", "Heat milk in a thick-bottomed pan."],
+        ["Reduce Milk", "Cook until the milk becomes creamy and reduces."],
+        ["Add Sugar", "Add sugar and cardamom."],
+        ["Add Nuts", "Mix chopped almonds and pistachios."],
+        ["Freeze", "Pour into moulds and freeze until firm."]
+    ]
+},
+
+"brownie": {
+    name: "Brownie",
+    category: "CONTINENTAL • DESSERT",
+    image: "brownie.jpg",
+    description: "A rich and chocolatey baked dessert with a soft and fudgy texture.",
+    video: "https://www.youtube.com/embed/aSR_13kV3z8",
+    prep: "15 mins",
+    cook: "30 mins",
+    servings: "6 People",
+    ingredients: [
+        ["All-Purpose Flour", "1 cup"],
+        ["Cocoa Powder", "½ cup"],
+        ["Sugar", "1 cup"],
+        ["Butter", "½ cup"],
+        ["Milk", "½ cup"],
+        ["Chocolate", "½ cup"]
+    ],
+    preparation: "Prepare a chocolate batter and bake until the brownie is cooked and soft.",
+    steps: [
+        ["Prepare Batter", "Mix flour, cocoa powder and sugar."],
+        ["Add Butter", "Add melted butter and milk."],
+        ["Add Chocolate", "Mix in melted chocolate."],
+        ["Bake", "Pour into a baking tray and bake until cooked."],
+        ["Serve", "Allow to cool and cut into pieces."]
+    ]
+},
+
+"cheesecake": {
+    name: "Cheesecake",
+    category: "CONTINENTAL • DESSERT",
+    image: "cheesecake.webp",
+    description: "A creamy dessert with a soft cheese filling and a biscuit base.",
+    prep: "25 mins",
+    cook: "40 mins",
+    servings: "6 People",
+    ingredients: [
+        ["Cream Cheese", "400 g"],
+        ["Biscuits", "200 g"],
+        ["Butter", "80 g"],
+        ["Sugar", "½ cup"],
+        ["Vanilla", "1 tsp"]
+    ],
+    preparation: "Prepare a biscuit base, add the creamy filling and cook until set.",
+    video: "https://www.youtube.com/embed/Mfig-pIyh-g",
+    steps: [
+        ["Prepare Base", "Crush biscuits and mix with melted butter."],
+        ["Prepare Filling", "Mix cream cheese with sugar and vanilla."],
+        ["Assemble", "Spread the filling over the biscuit base."],
+        ["Cook", "Bake until the cheesecake is set."],
+        ["Cool", "Allow it to cool before serving."]
+    ]
+},
+
+"chocolate-mousse": {
+    name: "Chocolate Mousse",
+    category: "CONTINENTAL • DESSERT",
+    image: "chocomouse.jpg",
+    description: "A smooth and creamy chocolate dessert with a light texture.",
+    video: "https://www.youtube.com/embed/pGo-1MHk7c8",
+    prep: "15 mins",
+    cook: "10 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Dark Chocolate", "200 g"],
+        ["Fresh Cream", "1 cup"],
+        ["Sugar", "2 tbsp"],
+        ["Vanilla", "1 tsp"]
+    ],
+    preparation: "Melt chocolate and combine it with whipped cream to prepare a light mousse.",
+    steps: [
+        ["Melt Chocolate", "Melt the chocolate gently."],
+        ["Whip Cream", "Whip the fresh cream until light."],
+        ["Combine", "Fold the chocolate into the whipped cream."],
+        ["Add Vanilla", "Add vanilla and mix gently."],
+        ["Chill", "Refrigerate before serving."]
+    ]
+},
+
+"tiramisu": {
+    name: "Tiramisu",
+    category: "ITALIAN • DESSERT",
+    image: "tiramisu.jpg",
+    description: "A creamy layered Italian dessert with coffee-soaked biscuits and cocoa.",
+    video: "https://www.youtube.com/embed/c4-9rR-YxZk",
+    prep: "25 mins",
+    cook: "0 mins",
+    servings: "6 People",
+    ingredients: [
+        ["Ladyfinger Biscuits", "20"],
+        ["Mascarpone Cheese", "250 g"],
+        ["Fresh Cream", "1 cup"],
+        ["Sugar", "½ cup"],
+        ["Coffee", "1 cup"],
+        ["Cocoa Powder", "2 tbsp"]
+    ],
+    preparation: "Layer coffee-soaked biscuits with creamy mascarpone filling and finish with cocoa powder.",
+    steps: [
+        ["Prepare Coffee", "Prepare and cool the coffee."],
+        ["Prepare Cream", "Mix mascarpone, cream and sugar."],
+        ["Soak Biscuits", "Dip the biscuits briefly in coffee."],
+        ["Create Layers", "Arrange biscuits and cream in layers."],
+        ["Chill", "Refrigerate and dust with cocoa before serving."]
+    ]
+},
+
+"apple-pie": {
+    name: "Apple Pie",
+    category: "CONTINENTAL • DESSERT",
+    image: "applepie.jpg",
+    description: "A classic baked dessert filled with sweet and flavorful apples.",
+    video: "https://www.youtube.com/embed/O6ZNMH5Q8uY",
+    prep: "25 mins",
+    cook: "40 mins",
+    servings: "6 People",
+    ingredients: [
+        ["Apples", "4"],
+        ["All-Purpose Flour", "2 cups"],
+        ["Butter", "½ cup"],
+        ["Sugar", "½ cup"],
+        ["Cinnamon", "1 tsp"]
+    ],
+    preparation: "Prepare the pastry and apple filling, assemble the pie and bake until golden.",
+    steps: [
+        ["Prepare Apples", "Peel and slice the apples."],
+        ["Prepare Filling", "Mix apples with sugar and cinnamon."],
+        ["Prepare Pastry", "Prepare the pastry dough."],
+        ["Fill Pie", "Place the apple filling inside the pastry."],
+        ["Bake", "Bake until the crust becomes golden."]
+    ]
+},
+
+"donut": {
+    name: "Donut",
+    category: "CONTINENTAL • DESSERT",
+    image: "donut.jpg",
+    description: "Soft and sweet ring-shaped dessert that can be decorated with different toppings.",
+    video: "https://www.youtube.com/embed/mXInO8Pptn8",
+    prep: "25 mins",
+    cook: "15 mins",
+    servings: "6 People",
+    ingredients: [
+        ["All-Purpose Flour", "2 cups"],
+        ["Milk", "¾ cup"],
+        ["Sugar", "¼ cup"],
+        ["Butter", "2 tbsp"],
+        ["Yeast", "1 tsp"]
+    ],
+    preparation: "Prepare a soft dough, shape it into rings and cook until golden.",
+    steps: [
+        ["Prepare Dough", "Mix flour, yeast, sugar, milk and butter."],
+        ["Rest Dough", "Allow the dough to rise."],
+        ["Shape Donuts", "Cut the dough into donut shapes."],
+        ["Cook", "Cook until golden."],
+        ["Decorate", "Add a suitable topping and serve."]
+    ]
+},
+
+"pudding": {
+    name: "Pudding",
+    category: "DESSERT • SWEET",
+    image: "pudding.jpg",
+    description: "A smooth and creamy dessert that is simple and delicious.",
+    video: "https://www.youtube.com/embed/RyFmkGbwNpA",
+    prep: "10 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Milk", "2 cups"],
+        ["Corn Flour", "2 tbsp"],
+        ["Sugar", "½ cup"],
+        ["Vanilla", "1 tsp"],
+        ["Fresh Cream", "½ cup"]
+    ],
+    preparation: "Cook milk with sugar and corn flour until thick and creamy, then chill before serving.",
+    steps: [
+        ["Heat Milk", "Heat the milk gently."],
+        ["Add Corn Flour", "Mix corn flour with a little water and add it to the milk."],
+        ["Add Sugar", "Add sugar and vanilla."],
+        ["Cook", "Cook until the mixture becomes thick."],
+        ["Chill", "Pour into bowls and refrigerate before serving."]
+    ]
+},
+"navadhanyam-sundal": {
+    name: "Navadhanyam Sundal",
+    category: "HEALTHY • SOUTH INDIAN",
+    image: "navadhanya-sundal.jpg",
+    description: "A nutritious sundal prepared using a variety of pulses and legumes.",
+    video: "https://www.youtube.com/embed/KkhN3Sw84-g",
+    prep: "10 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Navadhanyam", "2 cups"],
+        ["Coconut", "½ cup"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"],
+        ["Lemon", "1"]
+    ],
+    preparation: "Cook the mixed pulses until soft and combine them with fresh coconut and other ingredients.",
+    steps: [
+        ["Soak Pulses", "Wash and soak the mixed pulses as required."],
+        ["Cook Pulses", "Cook the pulses until soft."],
+        ["Prepare Mixture", "Add coconut and chopped green chilli."],
+        ["Add Lemon", "Add fresh lemon juice."],
+        ["Serve", "Mix well and serve."]
+    ]
+},
+
+"ragi-kanji": {
+    name: "Ragi Kanji",
+    category: "HEALTHY • SOUTH INDIAN",
+    image: "ragi.jpg",
+    description: "A nutritious ragi drink that is simple, filling and wholesome.",
+    video: "https://www.youtube.com/embed/SpTgmv3mUE4",
+    prep: "5 mins",
+    cook: "15 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Ragi Flour", "½ cup"],
+        ["Water", "2 cups"],
+        ["Buttermilk", "1 cup"],
+        ["Salt", "To taste"]
+    ],
+    preparation: "Cook ragi flour with water and allow it to cool before mixing with buttermilk.",
+    steps: [
+        ["Mix Ragi", "Mix ragi flour with water without lumps."],
+        ["Cook", "Cook the mixture until it thickens."],
+        ["Cool", "Allow it to cool slightly."],
+        ["Add Buttermilk", "Mix with buttermilk."],
+        ["Serve", "Serve fresh."]
+    ]
+},
+
+"kambu-koozh": {
+    name: "Kambu Koozh",
+    category: "HEALTHY • SOUTH INDIAN",
+    image: "kool.webp",
+    description: "A traditional pearl millet-based dish that is filling and refreshing.",
+    video: "https://www.youtube.com/embed/JJX59sRiF1A",
+    prep: "10 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Kambu Flour", "1 cup"],
+        ["Water", "4 cups"],
+        ["Buttermilk", "2 cups"],
+        ["Onion", "1"],
+        ["Salt", "To taste"]
+    ],
+    preparation: "Cook pearl millet flour with water and combine it with buttermilk before serving.",
+    steps: [
+        ["Mix Flour", "Mix kambu flour with water."],
+        ["Cook", "Cook until the mixture becomes thick."],
+        ["Cool", "Allow the mixture to cool."],
+        ["Add Buttermilk", "Mix with buttermilk."],
+        ["Serve", "Serve with chopped onion."]
+    ]
+},
+
+"thinai-pongal": {
+    name: "Thinai Pongal",
+    category: "HEALTHY • MILLET",
+    image: "thinaipongal.jpg",
+    description: "A wholesome pongal made using nutritious foxtail millet.",
+    video: "https://www.youtube.com/embed/MobH3FTpnqc",
+    prep: "10 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Thinai", "1 cup"],
+        ["Moong Dal", "½ cup"],
+        ["Ginger", "1 small piece"],
+        ["Cashews", "2 tbsp"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Cook thinai and moong dal together until soft and creamy.",
+    steps: [
+        ["Wash Ingredients", "Wash thinai and moong dal."],
+        ["Cook", "Cook them together until soft."],
+        ["Add Ginger", "Add chopped ginger."],
+        ["Add Cashews", "Add roasted cashews."],
+        ["Serve", "Mix well and serve warm."]
+    ]
+},
+
+"samai-upma": {
+    name: "Samai Upma",
+    category: "HEALTHY • MILLET",
+    image: "samai.webp",
+    description: "A light and nutritious upma prepared with little millet and vegetables.",
+    video: "https://www.youtube.com/embed/T7GB6ITky_o",
+    prep: "10 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Samai", "1 cup"],
+        ["Carrot", "1"],
+        ["Beans", "½ cup"],
+        ["Onion", "1"],
+        ["Green Peas", "½ cup"]
+    ],
+    preparation: "Cook little millet with fresh vegetables to prepare a healthy and filling upma.",
+    steps: [
+        ["Wash Samai", "Wash the samai thoroughly."],
+        ["Cook Vegetables", "Cook onion and vegetables until soft."],
+        ["Add Samai", "Add washed samai."],
+        ["Add Water", "Add water and cook until soft."],
+        ["Serve", "Serve warm."]
+    ]
+},
+
+"varagu-rice-bowl": {
+    name: "Varagu Rice Bowl",
+    category: "HEALTHY • MILLET",
+    image: "varagu.jpg",
+    description: "A wholesome meal bowl made with varagu and colorful vegetables.",
+    video: "https://www.youtube.com/embed/dZDdbqS9aDE",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Varagu", "1 cup"],
+        ["Carrot", "1"],
+        ["Beans", "½ cup"],
+        ["Sweet Corn", "½ cup"],
+        ["Cucumber", "1"]
+    ],
+    preparation: "Cook varagu and combine it with fresh and cooked vegetables.",
+    steps: [
+        ["Cook Varagu", "Wash and cook varagu until tender."],
+        ["Prepare Vegetables", "Chop the vegetables."],
+        ["Cook Vegetables", "Cook the required vegetables."],
+        ["Combine", "Add vegetables to the cooked varagu."],
+        ["Serve", "Serve as a wholesome bowl."]
+    ]
+},
+
+"kollu-rasam": {
+    name: "Kollu Rasam",
+    category: "HEALTHY • SOUTH INDIAN",
+    image: "kollu-rasam.webp",
+    description: "A flavorful South Indian rasam prepared using horse gram.",
+    video: "https://www.youtube.com/embed/q-wmwuG5Izg",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Kollu", "1 cup"],
+        ["Tomato", "2"],
+        ["Tamarind", "Small amount"],
+        ["Coriander Leaves", "2 tbsp"],
+        ["Water", "3 cups"]
+    ],
+    preparation: "Cook horse gram and prepare a flavorful rasam with tomato and tamarind.",
+    steps: [
+        ["Cook Kollu", "Cook kollu until soft."],
+        ["Prepare Tomato", "Cook chopped tomatoes."],
+        ["Add Tamarind", "Add tamarind water."],
+        ["Combine", "Add cooked kollu and water."],
+        ["Serve", "Simmer and serve warm."]
+    ]
+},
+
+"green-gram-sundal": {
+    name: "Green Gram Sundal",
+    category: "HEALTHY • SOUTH INDIAN",
+    image: "greengram.jpg",
+    description: "A simple protein-rich snack made with cooked green gram.",
+    video: "https://www.youtube.com/embed/070DCN-yWRo",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Green Gram", "2 cups"],
+        ["Coconut", "½ cup"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"],
+        ["Lemon", "1"]
+    ],
+    preparation: "Cook green gram and mix it with coconut, chilli and lemon.",
+    steps: [
+        ["Soak Gram", "Wash and soak green gram."],
+        ["Cook", "Cook until tender."],
+        ["Add Coconut", "Add fresh grated coconut."],
+        ["Add Lemon", "Add lemon juice."],
+        ["Serve", "Mix and serve."]
+    ]
+},
+
+"sprouts-salad": {
+    name: "Sprouts Salad",
+    category: "HEALTHY • SALAD",
+    image: "Sprout-Salad-Thumbnail.jpg",
+    description: "A fresh salad made with nutritious sprouts and colorful vegetables.",
+    video: "https://www.youtube.com/embed/euP77KYDDF0",
+    prep: "15 mins",
+    cook: "5 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Mixed Sprouts", "2 cups"],
+        ["Tomato", "1"],
+        ["Cucumber", "1"],
+        ["Carrot", "1"],
+        ["Lemon", "1"]
+    ],
+    preparation: "Combine fresh vegetables with sprouts and lemon juice for a refreshing salad.",
+    steps: [
+        ["Prepare Sprouts", "Wash the sprouts thoroughly."],
+        ["Chop Vegetables", "Chop tomato, cucumber and carrot."],
+        ["Combine", "Mix the sprouts and vegetables."],
+        ["Add Lemon", "Add fresh lemon juice."],
+        ["Serve", "Serve fresh."]
+    ]
+},
+
+"millet-vegetable-salad": {
+    name: "Millet Vegetable Salad",
+    category: "HEALTHY • SALAD",
+    image: "millsalad.jpg",
+    description: "A colorful salad combining cooked millet with fresh vegetables.",
+    video: "https://www.youtube.com/embed/ZkBoB5SBnIY",
+    prep: "15 mins",
+    cook: "15 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Cooked Millet", "2 cups"],
+        ["Cucumber", "1"],
+        ["Carrot", "1"],
+        ["Tomato", "1"],
+        ["Lemon", "1"]
+    ],
+    preparation: "Cool cooked millet and combine it with fresh vegetables and lemon.",
+    steps: [
+        ["Cook Millet", "Cook millet until tender."],
+        ["Cool Millet", "Allow the cooked millet to cool."],
+        ["Prepare Vegetables", "Chop the vegetables."],
+        ["Combine", "Mix millet with the vegetables."],
+        ["Serve", "Add lemon juice and serve."]
+    ]
+},
+
+"quinoa-salad": {
+    name: "Quinoa Salad",
+    category: "HEALTHY • SALAD",
+    image: "quinoa-salad.jpg",
+    description: "A light and nutritious salad made with quinoa and fresh vegetables.",
+    video: "https://www.youtube.com/embed/66D20fEqkdw",
+    prep: "15 mins",
+    cook: "15 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Quinoa", "1 cup"],
+        ["Cucumber", "1"],
+        ["Tomato", "1"],
+        ["Carrot", "1"],
+        ["Lemon", "1"]
+    ],
+    preparation: "Cook quinoa and combine it with fresh vegetables and lemon juice.",
+    steps: [
+        ["Wash Quinoa", "Wash quinoa thoroughly."],
+        ["Cook Quinoa", "Cook quinoa until tender."],
+        ["Prepare Vegetables", "Chop fresh vegetables."],
+        ["Combine", "Mix quinoa and vegetables."],
+        ["Serve", "Add lemon juice and serve."]
+    ]
+},
+
+"oats-vegetable-bowl": {
+    name: "Oats Vegetable Bowl",
+    category: "HEALTHY • BREAKFAST",
+    image: "oatveg.webp",
+    description: "A nutritious bowl of oats cooked with colorful vegetables.",
+    video: "https://www.youtube.com/embed/M7GI9yBH5Zw",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Oats", "1 cup"],
+        ["Carrot", "1"],
+        ["Beans", "½ cup"],
+        ["Peas", "½ cup"],
+        ["Onion", "1"]
+    ],
+    preparation: "Cook oats with fresh vegetables until soft and creamy.",
+    steps: [
+        ["Prepare Vegetables", "Chop the vegetables."],
+        ["Cook Vegetables", "Cook onion and vegetables until tender."],
+        ["Add Oats", "Add oats and mix well."],
+        ["Add Water", "Add water and cook until soft."],
+        ["Serve", "Serve warm."]
+    ]
+},
+
+"chia-seed-pudding": {
+    name: "Chia Seed Pudding",
+    category: "HEALTHY • DESSERT",
+    image: "chia.jpg",
+    description: "A simple and nutritious pudding made with chia seeds and milk.",
+    video: "https://www.youtube.com/embed/7sVgXutE9Lk",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Chia Seeds", "4 tbsp"],
+        ["Milk", "2 cups"],
+        ["Honey", "1 tbsp"],
+        ["Banana", "1"],
+        ["Nuts", "2 tbsp"]
+    ],
+    preparation: "Mix chia seeds with milk and allow them to absorb the liquid until thick.",
+    steps: [
+        ["Mix Ingredients", "Combine chia seeds and milk."],
+        ["Add Honey", "Add a little honey."],
+        ["Refrigerate", "Keep the mixture refrigerated."],
+        ["Prepare Topping", "Slice banana and prepare nuts."],
+        ["Serve", "Top with banana and nuts."]
+    ]
+},
+
+"mixed-fruit-nut-bowl": {
+    name: "Mixed Fruit & Nut Bowl",
+    category: "HEALTHY • FRUIT",
+    image: "mixed.webp",
+    description: "A colorful bowl of fresh fruits and nutritious nuts.",
+    video: "https://www.youtube.com/embed/da-jj78VDZM",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Apple", "1"],
+        ["Banana", "1"],
+        ["Orange", "1"],
+        ["Grapes", "1 cup"],
+        ["Mixed Nuts", "½ cup"]
+    ],
+    preparation: "Cut fresh fruits and combine them with mixed nuts for a refreshing bowl.",
+    steps: [
+        ["Prepare Fruits", "Wash and cut the fruits."],
+        ["Add Fruits", "Place all fruits in a bowl."],
+        ["Add Nuts", "Add mixed nuts."],
+        ["Mix", "Mix gently."],
+        ["Serve", "Serve fresh."]
+    ]
+},
+
+"vegetable-smoothie": {
+    name: "Vegetable Smoothie",
+    category: "HEALTHY • DRINK",
+    image: "smoothie.jpg",
+    description: "A refreshing drink prepared using fresh vegetables and fruits.",
+    video: "https://www.youtube.com/embed/225AHL57ei8",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "2 People",
+    ingredients: [
+        ["Carrot", "1"],
+        ["Cucumber", "1"],
+        ["Tomato", "1"],
+        ["Apple", "1"],
+        ["Water", "1 cup"]
+    ],
+    preparation: "Blend fresh vegetables and apple with water until smooth.",
+    steps: [
+        ["Prepare Ingredients", "Wash and cut all ingredients."],
+        ["Add to Blender", "Place the ingredients into a blender."],
+        ["Blend", "Blend until smooth."],
+        ["Adjust Consistency", "Add water if required."],
+        ["Serve", "Serve fresh."]
+    ]
+},
+"mor-kuzhambu": {
+    name: "Mor Kuzhambu",
+    category: "SOUTH INDIAN • VEGETARIAN",
+    image: "mor-kuzhambu-recipe-2.webp",
+    description: "A traditional South Indian yogurt-based curry with a mild and creamy flavor.",
+    video: "https://www.youtube.com/embed/zE7lruso3u0",
+    prep: "15 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Curd", "2 cups"],
+        ["Coconut", "½ cup"],
+        ["Green Chilli", "2"],
+        ["Turmeric", "½ tsp"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Prepare a coconut mixture, combine it with whisked curd and cook gently.",
+    steps: [
+        ["Prepare Curd", "Whisk the curd until smooth."],
+        ["Prepare Mixture", "Blend coconut and green chilli."],
+        ["Combine", "Mix the coconut paste with curd."],
+        ["Cook", "Heat gently without allowing the curd to boil strongly."],
+        ["Serve", "Garnish with coriander and serve."]
+    ]
+},
+
+"palaamoos-sambar": {
+    name: "Palaamoos Sambar",
+    category: "SOUTH INDIAN • VEGETARIAN",
+    image: "jackkaai.jpg",
+    description: "A flavorful sambar prepared with small jackfruit pieces and lentils.",
+    video: "https://www.youtube.com/embed/bnRFovvHSJY",
+    prep: "20 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Palaamoos", "2 cups"],
+        ["Toor Dal", "1 cup"],
+        ["Tomato", "2"],
+        ["Tamarind", "Small amount"],
+        ["Sambar Powder", "2 tbsp"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Cook the lentils and palaamoos, then combine them with a flavorful sambar base.",
+    steps: [
+        ["Cook Dal", "Wash and cook the toor dal until soft."],
+        ["Prepare Palaamoos", "Clean and cut the small jackfruit pieces."],
+        ["Prepare Base", "Cook tomato and tamarind with sambar powder."],
+        ["Combine", "Add cooked dal and palaamoos."],
+        ["Serve", "Simmer and garnish with coriander."]
+    ]
+},
+
+"paal-kuzhambu": {
+    name: "Paal Kuzhambu",
+    category: "SOUTH INDIAN • VEGETARIAN",
+    image: "paal.jpg",
+    description: "A mild South Indian curry prepared with milk and flavorful ingredients.",
+    video: "https://www.youtube.com/embed/g5tWAhR5XoQ",
+    prep: "15 mins",
+    cook: "20 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Milk", "2 cups"],
+        ["Coconut", "½ cup"],
+        ["Onion", "1"],
+        ["Green Chilli", "2"],
+        ["Vegetables", "1 cup"]
+    ],
+    preparation: "Prepare a coconut base, add vegetables and finish the curry with milk.",
+    steps: [
+        ["Prepare Vegetables", "Wash and cut the vegetables."],
+        ["Prepare Coconut Paste", "Blend coconut with green chilli."],
+        ["Cook Vegetables", "Cook vegetables until tender."],
+        ["Add Milk", "Add milk and the coconut mixture."],
+        ["Serve", "Simmer gently and serve."]
+    ]
+},
+
+"avial": {
+    name: "Avial",
+    category: "KERALA • VEGETARIAN",
+    image: "avial.jpg",
+    description: "A traditional South Indian mixed vegetable dish cooked with coconut and yogurt.",
+    video: "https://www.youtube.com/embed/izYnq57F8wI",
+    prep: "20 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Mixed Vegetables", "3 cups"],
+        ["Coconut", "1 cup"],
+        ["Curd", "1 cup"],
+        ["Green Chilli", "2"],
+        ["Curry Leaves", "1 sprig"]
+    ],
+    preparation: "Cook mixed vegetables and combine them with coconut paste and curd.",
+    steps: [
+        ["Cut Vegetables", "Wash and cut mixed vegetables."],
+        ["Cook Vegetables", "Cook vegetables until tender."],
+        ["Prepare Coconut", "Blend coconut and green chilli."],
+        ["Combine", "Mix coconut paste with the vegetables."],
+        ["Finish", "Add curd and curry leaves and serve."]
+    ]
+},
+
+"kootu": {
+    name: "Kootu",
+    category: "SOUTH INDIAN • VEGETARIAN",
+    image: "koottu.jpg",
+    description: "A nutritious South Indian dish combining vegetables and cooked lentils.",
+    video: "https://www.youtube.com/embed/g0f26tFSblk",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Vegetables", "2 cups"],
+        ["Moong Dal", "1 cup"],
+        ["Coconut", "½ cup"],
+        ["Green Chilli", "2"],
+        ["Curry Leaves", "1 sprig"]
+    ],
+    preparation: "Cook vegetables and dal together and finish with coconut mixture.",
+    steps: [
+        ["Cook Dal", "Cook moong dal until soft."],
+        ["Cook Vegetables", "Cook vegetables until tender."],
+        ["Prepare Coconut", "Blend coconut and green chilli."],
+        ["Combine", "Add coconut mixture to vegetables and dal."],
+        ["Serve", "Simmer and serve warm."]
+    ]
+},
+
+"keerai-masiyal": {
+    name: "Keerai Masiyal",
+    category: "TAMIL NADU • VEGETARIAN",
+    image: "keerai.jpg",
+    description: "A simple traditional dish made with cooked greens.",
+    video: "https://www.youtube.com/embed/nJ4BqrK-C-E",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Spinach/Keerai", "4 cups"],
+        ["Garlic", "3 cloves"],
+        ["Green Chilli", "2"],
+        ["Onion", "1"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Cook the greens with simple ingredients and mash them into a soft consistency.",
+    steps: [
+        ["Wash Greens", "Wash the keerai thoroughly."],
+        ["Cook Greens", "Cook the greens with onion and green chilli."],
+        ["Add Garlic", "Add chopped garlic."],
+        ["Mash", "Mash the cooked greens until soft."],
+        ["Serve", "Serve warm with rice."]
+    ]
+},
+
+"poriyal": {
+    name: "Poriyal",
+    category: "SOUTH INDIAN • VEGETARIAN",
+    image: "priyal.avif",
+    description: "A simple South Indian vegetable preparation with fresh coconut.",
+    video: "https://www.youtube.com/embed/48QMJ1Zi2uY",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Mixed Vegetables", "3 cups"],
+        ["Coconut", "½ cup"],
+        ["Onion", "1"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Cook vegetables until tender and finish with grated coconut.",
+    steps: [
+        ["Prepare Vegetables", "Wash and cut vegetables."],
+        ["Cook Onion", "Cook onion until soft."],
+        ["Add Vegetables", "Add vegetables and cook until tender."],
+        ["Add Coconut", "Mix in fresh grated coconut."],
+        ["Serve", "Serve warm."]
+    ]
+},
+
+"vatha-kuzhambu": {
+    name: "Vatha Kuzhambu",
+    category: "TAMIL NADU • VEGETARIAN",
+    image: "vathakolambu.jpg",
+    description: "A tangy and flavorful traditional Tamil Nadu curry made with tamarind.",
+    video: "https://www.youtube.com/embed/JgH5UvCNhX8",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Tamarind", "Small lemon-sized piece"],
+        ["Shallots", "10"],
+        ["Tomato", "1"],
+        ["Vathal", "½ cup"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Prepare a tamarind-based gravy with vegetables and vathal.",
+    steps: [
+        ["Prepare Tamarind", "Soak tamarind and extract the juice."],
+        ["Cook Shallots", "Cook shallots until soft."],
+        ["Add Vathal", "Add vathal and cook briefly."],
+        ["Prepare Gravy", "Add tamarind water and simmer."],
+        ["Serve", "Cook until flavorful and serve with rice."]
+    ]
+},
+
+"kathirikai-kara-kuzhambu": {
+    name: "Kathirikai Kara Kuzhambu",
+    category: "TAMIL NADU • VEGETARIAN",
+    image: "kathirikai.jpg",
+    description: "A spicy and tangy brinjal curry prepared with tamarind and flavorful ingredients.",
+    video: "https://www.youtube.com/embed/mBzvdBqrW1A",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Brinjal", "5"],
+        ["Tamarind", "Small amount"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Cook brinjal in a tangy tamarind gravy until tender.",
+    steps: [
+        ["Prepare Brinjal", "Wash and cut the brinjal."],
+        ["Cook Onion", "Cook onion until soft."],
+        ["Add Tomato", "Add chopped tomatoes."],
+        ["Prepare Gravy", "Add tamarind water and brinjal."],
+        ["Cook", "Simmer until the brinjal is tender."]
+    ]
+},
+
+"vegetable-kurma": {
+    name: "Vegetable Kurma",
+    category: "INDIAN • VEGETARIAN",
+    image: "veg-kurma.jpg",
+    description: "A creamy mixed vegetable curry prepared with coconut and flavorful ingredients.",
+    video: "https://www.youtube.com/embed/a4SEVGIOsqM",
+    prep: "20 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Mixed Vegetables", "3 cups"],
+        ["Coconut", "1 cup"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Green Peas", "½ cup"]
+    ],
+    preparation: "Cook mixed vegetables in a creamy coconut-based gravy.",
+    steps: [
+        ["Prepare Vegetables", "Wash and cut the vegetables."],
+        ["Cook Onion", "Cook onion until soft."],
+        ["Add Tomato", "Add chopped tomatoes."],
+        ["Add Vegetables", "Add vegetables and cook until tender."],
+        ["Finish Kurma", "Add coconut mixture and simmer."]
+    ]
+},
+
+"dal-makhani": {
+    name: "Dal Makhani",
+    category: "NORTH INDIAN • VEGETARIAN",
+    image: "makani.jpg",
+    description: "A rich and creamy lentil dish prepared with black lentils and kidney beans.",
+    video: "https://www.youtube.com/embed/ca51e7nMI2g",
+    prep: "20 mins",
+    cook: "40 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Black Lentils", "1 cup"],
+        ["Kidney Beans", "½ cup"],
+        ["Tomato", "2"],
+        ["Butter", "2 tbsp"],
+        ["Cream", "½ cup"]
+    ],
+    preparation: "Cook lentils until soft and prepare a rich tomato-based creamy gravy.",
+    steps: [
+        ["Soak Lentils", "Soak black lentils and kidney beans."],
+        ["Cook Lentils", "Cook them until completely soft."],
+        ["Prepare Gravy", "Cook tomatoes until soft."],
+        ["Combine", "Add cooked lentils to the gravy."],
+        ["Finish", "Add butter and cream and simmer."]
+    ]
+},
+
+"malai-kofta": {
+    name: "Malai Kofta",
+    category: "NORTH INDIAN • VEGETARIAN",
+    image: "malaikofta.jpg",
+    description: "Soft vegetable and paneer dumplings served in a creamy gravy.",
+    video: "https://www.youtube.com/embed/c8Lh4vzSQG0",
+    prep: "25 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Paneer", "200 g"],
+        ["Potatoes", "2"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Cream", "½ cup"]
+    ],
+    preparation: "Prepare soft paneer and potato dumplings and serve them with creamy gravy.",
+    steps: [
+        ["Prepare Mixture", "Mash paneer and potatoes together."],
+        ["Shape Kofta", "Shape the mixture into small balls."],
+        ["Prepare Gravy", "Cook onion and tomato into a smooth gravy."],
+        ["Add Cream", "Add cream to the gravy."],
+        ["Serve", "Place koftas in the gravy and serve."]
+    ]
+},
+
+"matar-paneer": {
+    name: "Matar Paneer",
+    category: "NORTH INDIAN • VEGETARIAN",
+    image: "matar.jpg",
+    description: "Paneer and green peas cooked in a flavorful tomato-based gravy.",
+    video: "https://www.youtube.com/embed/ZknwxYH8g2A",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Paneer", "250 g"],
+        ["Green Peas", "1 cup"],
+        ["Tomato", "2"],
+        ["Onion", "1"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Prepare a tomato gravy and cook paneer and green peas until flavorful.",
+    steps: [
+        ["Prepare Paneer", "Cut paneer into small cubes."],
+        ["Cook Onion", "Cook chopped onion until soft."],
+        ["Add Tomato", "Add tomatoes and cook well."],
+        ["Add Peas", "Add green peas and cook."],
+        ["Add Paneer", "Add paneer and simmer before serving."]
+    ]
+},
+
+"aloo-palak": {
+    name: "Aloo Palak",
+    category: "NORTH INDIAN • VEGETARIAN",
+    image: "aloo-palak.jpg",
+    description: "A healthy combination of potatoes and spinach cooked with simple ingredients.",
+    video: "https://www.youtube.com/embed/0myW6Jud4jw",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Potatoes", "3"],
+        ["Spinach", "3 cups"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Green Chilli", "2"]
+    ],
+    preparation: "Cook potatoes and spinach together with onion and tomato.",
+    steps: [
+        ["Prepare Potatoes", "Wash, peel and cut the potatoes."],
+        ["Cook Onion", "Cook onion until soft."],
+        ["Add Tomato", "Add chopped tomatoes and green chilli."],
+        ["Add Spinach", "Add chopped spinach and cook."],
+        ["Add Potatoes", "Add potatoes and cook until tender."]
+    ]
+},
+
+"chana-masala": {
+    name: "Chana Masala",
+    category: "NORTH INDIAN • VEGETARIAN",
+    image: "channa.jpg",
+    description: "A flavorful chickpea curry prepared with onion and tomato gravy.",
+    video: "https://www.youtube.com/embed/zqlWezI-DBg",
+    prep: "15 mins",
+    cook: "30 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Chickpeas", "2 cups"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Green Chilli", "2"],
+        ["Coriander Leaves", "2 tbsp"]
+    ],
+    preparation: "Cook chickpeas in a flavorful onion and tomato gravy.",
+    steps: [
+        ["Soak Chickpeas", "Soak chickpeas and cook until tender."],
+        ["Cook Onion", "Cook chopped onion until soft."],
+        ["Add Tomato", "Add tomatoes and green chilli."],
+        ["Add Chickpeas", "Add cooked chickpeas to the gravy."],
+        ["Serve", "Simmer and garnish with coriander."]
+    ]
+},
+"chicken-65": {
+    name: "Chicken 65",
+    category: "NON-VEGETARIAN • STARTER",
+    image: "65.jpg",
+    description: "A crispy and spicy South Indian chicken starter.",
+    video: "https://www.youtube.com/embed/-HPRM7b3r4Q",
+    prep: "20 mins",
+    cook: "20 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Chicken", "500 g"],
+        ["Curd", "2 tbsp"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Chilli Powder", "1 tsp"],
+        ["Cornflour", "2 tbsp"],
+        ["Rice Flour", "1 tbsp"],
+        ["Salt", "To taste"],
+        ["Oil", "For frying"]
+    ],
+    preparation: "Marinate chicken with curd, spices and flour, then fry until crispy.",
+    steps: [
+        ["Clean Chicken", "Wash and drain the chicken pieces."],
+        ["Prepare Marinade", "Mix curd, ginger-garlic paste, chilli powder, cornflour, rice flour and salt."],
+        ["Marinate", "Add chicken and marinate for 20 minutes."],
+        ["Heat Oil", "Heat oil in a pan."],
+        ["Fry Chicken", "Fry the chicken until golden and fully cooked."],
+        ["Serve", "Serve hot with lemon wedges."]
+    ]
+},
+
+"chicken-chettinad": {
+    name: "Chicken Chettinad",
+    category: "NON-VEGETARIAN • SOUTH INDIAN",
+    image: "chettinad.jpg",
+    description: "A traditional Chettinad chicken curry with roasted spices and coconut.",
+    video: "https://www.youtube.com/embed/c7CqaRmVa5g",
+    prep: "20 mins",
+    cook: "40 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Chicken", "500 g"],
+        ["Onion", "2 medium"],
+        ["Tomato", "2 medium"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Grated Coconut", "½ cup"],
+        ["Fennel Seeds", "1 tsp"],
+        ["Black Pepper", "1 tsp"],
+        ["Coriander Powder", "2 tsp"],
+        ["Curry Leaves", "1 sprig"],
+        ["Oil and Salt", "As needed"]
+    ],
+    preparation: "Cook chicken in a traditional Chettinad masala prepared with roasted coconut and spices.",
+    steps: [
+        ["Roast Spices", "Roast coconut, fennel seeds and pepper, then grind into a paste."],
+        ["Sauté Onion", "Heat oil and sauté onions and curry leaves."],
+        ["Add Ginger-Garlic", "Add ginger-garlic paste and cook briefly."],
+        ["Add Tomato", "Add chopped tomatoes and cook until soft."],
+        ["Cook Chicken", "Add chicken, coriander powder and salt."],
+        ["Add Masala", "Add the ground paste and water."],
+        ["Serve", "Cook until the chicken is tender and serve hot."]
+    ]
+},
+
+"mutton-curry": {
+    name: "Mutton Curry",
+    category: "NON-VEGETARIAN • CURRY",
+    image: "mcurry.jpg",
+    description: "A flavourful mutton curry cooked with onions, tomatoes and aromatic spices.",
+    video: "https://www.youtube.com/embed/aGYM7X-x6ZU",
+    prep: "20 mins",
+    cook: "45 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Mutton", "500 g"],
+        ["Onion", "2 medium"],
+        ["Tomato", "2 medium"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Chilli Powder", "1 tsp"],
+        ["Coriander Powder", "1 tsp"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Garam Masala", "½ tsp"],
+        ["Oil and Salt", "As needed"]
+    ],
+    preparation: "Pressure-cook mutton with onion, tomato and spices until tender and flavourful.",
+    steps: [
+        ["Prepare Mutton", "Wash the mutton and drain excess water."],
+        ["Sauté Onion", "Heat oil in a pressure cooker and sauté chopped onions."],
+        ["Add Paste", "Add ginger-garlic paste and cook."],
+        ["Add Tomato", "Add tomatoes and cook until soft."],
+        ["Add Spices", "Add chilli powder, coriander powder, turmeric and salt."],
+        ["Pressure-Cook", "Add mutton and water, then cook until tender."],
+        ["Serve", "Add garam masala and serve hot."]
+    ]
+},
+
+"mutton-biryani": {
+    name: "Mutton Biryani",
+    category: "NON-VEGETARIAN • BIRYANI",
+    image: "Muttonbiryani1.jpg",
+    description: "Aromatic basmati rice cooked with tender mutton and traditional biryani spices.",
+    video: "https://www.youtube.com/embed/9LIfzTxpbIc",
+    prep: "30 mins",
+    cook: "60 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Mutton", "500 g"],
+        ["Basmati Rice", "2 cups"],
+        ["Onion", "2 medium"],
+        ["Tomato", "2 medium"],
+        ["Curd", "½ cup"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Biryani Masala", "2 tsp"],
+        ["Mint Leaves", "¼ cup"],
+        ["Coriander Leaves", "¼ cup"],
+        ["Oil and Salt", "As needed"]
+    ],
+    preparation: "Cook marinated mutton with spices and combine with rice until aromatic and fully cooked.",
+    steps: [
+        ["Wash Rice", "Wash and soak basmati rice for 20 minutes."],
+        ["Sauté Onion", "Heat oil and sauté sliced onions."],
+        ["Prepare Masala", "Add ginger-garlic paste, tomatoes, curd and biryani masala."],
+        ["Cook Mutton", "Add mutton, mint, coriander leaves and salt."],
+        ["Tenderize", "Cook the mutton until tender."],
+        ["Add Rice", "Add soaked rice and the required amount of water."],
+        ["Cook Biryani", "Cover and cook until the rice is soft and fully cooked."],
+        ["Serve", "Gently mix and serve hot."]
+    ]
+},
+
+"fish-fry": {
+    name: "Fish Fry",
+    category: "NON-VEGETARIAN • SEAFOOD",
+    image: "fishfry.jpg",
+    description: "Crispy fish slices coated with a spicy South Indian masala.",
+    video: "https://www.youtube.com/embed/9LIfzTxpbIc",
+    prep: "15 mins",
+    cook: "15 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Fish Slices", "500 g"],
+        ["Chilli Powder", "1 tsp"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Coriander Powder", "1 tsp"],
+        ["Ginger-Garlic Paste", "1 tsp"],
+        ["Lemon Juice", "1 tbsp"],
+        ["Salt", "To taste"],
+        ["Oil", "For frying"]
+    ],
+    preparation: "Marinate fish slices with spices and shallow-fry until cooked.",
+    steps: [
+        ["Clean Fish", "Wash the fish slices and drain well."],
+        ["Prepare Masala", "Mix chilli powder, turmeric, coriander powder, ginger-garlic paste, lemon juice and salt."],
+        ["Marinate", "Apply the masala to the fish and rest for 15 minutes."],
+        ["Heat Pan", "Heat oil in a frying pan."],
+        ["Fry Fish", "Fry the fish on both sides until fully cooked."],
+        ["Serve", "Serve hot with lemon and onion slices."]
+    ]
+},
+
+"fish-tikka": {
+    name: "Fish Tikka",
+    category: "NON-VEGETARIAN • SEAFOOD",
+    image: "Fish-Tikka.jpg",
+    description: "Tender fish pieces marinated in curd and spices, then grilled.",
+    video: "https://www.youtube.com/embed/eFSauc959XE",
+    prep: "25 mins",
+    cook: "20 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Boneless Fish", "500 g"],
+        ["Thick Curd", "½ cup"],
+        ["Chilli Powder", "1 tsp"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Garam Masala", "1 tsp"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Lemon Juice", "1 tbsp"],
+        ["Salt and Oil", "As needed"]
+    ],
+    preparation: "Marinate fish cubes in a spiced curd mixture and grill until cooked.",
+    steps: [
+        ["Cut Fish", "Cut boneless fish into medium-sized cubes."],
+        ["Prepare Marinade", "Mix curd, chilli powder, turmeric, garam masala, ginger-garlic paste and salt."],
+        ["Marinate", "Add fish and marinate for 20 minutes."],
+        ["Arrange Fish", "Place fish pieces on skewers or a baking tray."],
+        ["Grill", "Grill or bake, turning halfway through."],
+        ["Serve", "Serve hot with mint chutney."]
+    ]
+},
+
+"prawn-masala": {
+    name: "Prawn Masala",
+    category: "NON-VEGETARIAN • SEAFOOD",
+    image: "Prawn-Masala-min.jpg",
+    description: "Juicy prawns cooked in a rich onion and tomato masala.",
+    video: "https://www.youtube.com/embed/8tffsFaMgdY",
+    prep: "15 mins",
+    cook: "20 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Prawns", "500 g"],
+        ["Onion", "2 medium"],
+        ["Tomato", "2 medium"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Chilli Powder", "1 tsp"],
+        ["Coriander Powder", "1 tsp"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Curry Leaves", "1 sprig"],
+        ["Oil and Salt", "As needed"]
+    ],
+    preparation: "Cook cleaned prawns in a spicy onion-tomato masala until tender.",
+    steps: [
+        ["Clean Prawns", "Wash and clean the prawns."],
+        ["Sauté Onion", "Heat oil and sauté onions with curry leaves."],
+        ["Add Paste", "Add ginger-garlic paste and cook briefly."],
+        ["Add Tomato", "Add chopped tomatoes and cook until soft."],
+        ["Add Spices", "Add chilli powder, coriander powder, turmeric and salt."],
+        ["Cook Prawns", "Add prawns and mix well."],
+        ["Serve", "Cook until the prawns are fully cooked and serve hot."]
+    ]
+},
+
+"prawn-fry": {
+    name: "Prawn Fry",
+    category: "NON-VEGETARIAN • SEAFOOD",
+    image: "pfry.jpg",
+    description: "A spicy prawn fry with a crispy coating and aromatic spices.",
+    video: "https://www.youtube.com/embed/Q_n1bRENGgE",
+    prep: "15 mins",
+    cook: "12 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Prawns", "500 g"],
+        ["Chilli Powder", "1 tsp"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Pepper Powder", "1 tsp"],
+        ["Ginger-Garlic Paste", "1 tsp"],
+        ["Lemon Juice", "1 tbsp"],
+        ["Salt", "To taste"],
+        ["Oil", "For frying"]
+    ],
+    preparation: "Marinate prawns with spices and fry until fully cooked.",
+    steps: [
+        ["Clean Prawns", "Clean the prawns and drain excess water."],
+        ["Prepare Masala", "Mix chilli powder, turmeric, pepper, ginger-garlic paste, lemon juice and salt."],
+        ["Marinate", "Add prawns and marinate for 15 minutes."],
+        ["Heat Oil", "Heat oil in a pan."],
+        ["Fry Prawns", "Fry the prawns, stirring occasionally, until fully cooked."],
+        ["Serve", "Serve hot with lemon wedges."]
+    ]
+},
+
+"crab-masala": {
+    name: "Crab Masala",
+    category: "NON-VEGETARIAN • SEAFOOD",
+    image: "crab.jpg",
+    description: "Crab cooked in a traditional masala with onions, tomatoes and spices.",
+    video: "https://www.youtube.com/embed/l6vdzhTUTrc",
+    prep: "25 mins",
+    cook: "30 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Cleaned Crab", "500 g"],
+        ["Onion", "2 medium"],
+        ["Tomato", "2 medium"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Chilli Powder", "1 tsp"],
+        ["Coriander Powder", "1 tsp"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Curry Leaves", "1 sprig"],
+        ["Oil and Salt", "As needed"]
+    ],
+    preparation: "Cook cleaned crab with onion-tomato masala and spices until fully cooked.",
+    steps: [
+        ["Clean Crab", "Clean the crab thoroughly."],
+        ["Sauté Onion", "Heat oil and sauté onions with curry leaves."],
+        ["Add Paste", "Add ginger-garlic paste and cook briefly."],
+        ["Add Tomato", "Add tomatoes and cook until soft."],
+        ["Add Spices", "Add chilli powder, coriander powder, turmeric and salt."],
+        ["Cook Crab", "Add crab and a little water, then cover and cook until fully cooked."],
+        ["Serve", "Serve hot with rice or roti."]
+    ]
+},
+
+"chicken-kebab": {
+    name: "Chicken Kebab",
+    category: "NON-VEGETARIAN • STARTER",
+    image: "kebab.webp",
+    description: "Juicy chicken kebabs marinated with curd, herbs and spices.",
+    video: "https://www.youtube.com/embed/fIeCfffQ5IM",
+    prep: "30 mins",
+    cook: "20 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Boneless Chicken", "500 g"],
+        ["Curd", "½ cup"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Chilli Powder", "1 tsp"],
+        ["Garam Masala", "1 tsp"],
+        ["Lemon Juice", "1 tbsp"],
+        ["Salt", "To taste"],
+        ["Oil", "As needed"]
+    ],
+    preparation: "Marinate chicken pieces with curd and spices, then grill until cooked.",
+    steps: [
+        ["Cut Chicken", "Cut chicken into medium-sized pieces."],
+        ["Prepare Marinade", "Mix curd, ginger-garlic paste, chilli powder, garam masala, lemon juice and salt."],
+        ["Marinate", "Add chicken and marinate for 30 minutes."],
+        ["Arrange", "Thread chicken pieces onto skewers."],
+        ["Grill", "Grill or bake until thoroughly cooked, turning occasionally."],
+        ["Serve", "Serve hot with mint chutney."]
+    ]
+},
+
+"mutton-kebab": {
+    name: "Mutton Kebab",
+    category: "NON-VEGETARIAN • STARTER",
+    image: "mkebab.webp",
+    description: "Spiced minced mutton shaped into kebabs and cooked until tender.",
+    video: "https://www.youtube.com/embed/tVf043w3Xn4",
+    prep: "25 mins",
+    cook: "25 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Minced Mutton", "500 g"],
+        ["Onion", "1 medium"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Chilli Powder", "1 tsp"],
+        ["Garam Masala", "1 tsp"],
+        ["Coriander Leaves", "2 tbsp"],
+        ["Salt", "To taste"],
+        ["Oil", "As needed"]
+    ],
+    preparation: "Mix minced mutton with onions and spices, shape into kebabs and cook thoroughly.",
+    steps: [
+        ["Prepare Mixture", "Combine minced mutton, finely chopped onion and ginger-garlic paste."],
+        ["Add Spices", "Add chilli powder, garam masala, coriander leaves and salt."],
+        ["Shape Kebabs", "Mix well and shape into kebabs."],
+        ["Heat Pan", "Heat a lightly oiled pan or grill."],
+        ["Cook Kebabs", "Cook the kebabs, turning regularly, until fully cooked."],
+        ["Serve", "Serve hot with chutney."]
+    ]
+},
+
+"egg-masala": {
+    name: "Egg Masala",
+    category: "NON-VEGETARIAN • EGG",
+    image: "EggMasala4.webp",
+    description: "Boiled eggs simmered in a rich and spicy tomato gravy.",
+    video: "https://www.youtube.com/embed/jq9JL9L6sbI",
+    prep: "10 mins",
+    cook: "20 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Eggs", "4"],
+        ["Onion", "2 medium"],
+        ["Tomato", "2 medium"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Chilli Powder", "1 tsp"],
+        ["Coriander Powder", "1 tsp"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Oil and Salt", "As needed"]
+    ],
+    preparation: "Prepare a spicy onion-tomato gravy and simmer boiled eggs in it.",
+    steps: [
+        ["Boil Eggs", "Boil the eggs, peel them and make small slits."],
+        ["Sauté Onion", "Heat oil and sauté chopped onions."],
+        ["Add Paste", "Add ginger-garlic paste and cook."],
+        ["Add Tomato", "Add tomatoes and cook until soft."],
+        ["Add Spices", "Add chilli powder, coriander powder, turmeric and salt."],
+        ["Prepare Gravy", "Add a little water and simmer until the gravy thickens."],
+        ["Add Eggs", "Add boiled eggs and cook for a few minutes."],
+        ["Serve", "Serve hot with rice or chapati."]
+    ]
+},
+
+"fish-molee": {
+    name: "Fish Molee",
+    category: "NON-VEGETARIAN • KERALA",
+    image: "Fish-Molee.jpg",
+    description: "A Kerala-style fish curry prepared with coconut milk and mild spices.",
+    video: "https://www.youtube.com/embed/cJJbvDywDfY",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "3 People",
+    ingredients: [
+        ["Fish Pieces", "500 g"],
+        ["Coconut Milk", "1 cup"],
+        ["Onion", "1 medium"],
+        ["Tomato", "1 medium"],
+        ["Ginger", "1 small piece"],
+        ["Green Chillies", "2"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Curry Leaves", "1 sprig"],
+        ["Oil and Salt", "As needed"]
+    ],
+    preparation: "Simmer fish in a mild coconut milk gravy with ginger, green chillies and curry leaves.",
+    steps: [
+        ["Clean Fish", "Wash the fish pieces and drain well."],
+        ["Sauté Aromatics", "Heat oil and sauté ginger, green chillies and curry leaves."],
+        ["Add Onion", "Add sliced onion and cook until soft."],
+        ["Add Tomato", "Add tomato, turmeric and salt."],
+        ["Prepare Gravy", "Add a little water and simmer."],
+        ["Cook Fish", "Add fish and cook gently until nearly done."],
+        ["Add Coconut Milk", "Add coconut milk and simmer on low heat until the fish is fully cooked."],
+        ["Serve", "Serve warm with rice or appam."]
+    ]
+},
+
+"chicken-saag": {
+    name: "Chicken Saag",
+    category: "NON-VEGETARIAN • SPINACH",
+    image: "saag.jpg",
+    description: "Chicken cooked with spinach, tomatoes and aromatic spices.",
+    video: "https://www.youtube.com/embed/IWCYQK2ij5g",
+    prep: "20 mins",
+    cook: "35 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Chicken", "500 g"],
+        ["Spinach", "2 cups"],
+        ["Onion", "1 medium"],
+        ["Tomato", "2 medium"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Cumin Seeds", "1 tsp"],
+        ["Coriander Powder", "1 tsp"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Oil and Salt", "As needed"]
+    ],
+    preparation: "Cook chicken in a spiced gravy with spinach puree until tender.",
+    steps: [
+        ["Wash Spinach", "Wash spinach thoroughly."],
+        ["Prepare Puree", "Cook spinach briefly and blend into a puree."],
+        ["Sauté Onion", "Heat oil and add cumin seeds, then sauté onions."],
+        ["Add Paste", "Add ginger-garlic paste and cook."],
+        ["Add Tomato", "Add tomatoes, coriander powder, turmeric and salt."],
+        ["Cook Chicken", "Add chicken and a little water, then cook until nearly done."],
+        ["Add Spinach", "Stir in spinach puree and simmer until the chicken is fully cooked."],
+        ["Serve", "Serve hot with roti or rice."]
+    ]
+},
+
+"mutton-sukka": {
+    name: "Mutton Sukka",
+    category: "NON-VEGETARIAN • SOUTH INDIAN",
+    image: "mutton-chukka.jpg",
+    description: "A traditional South Indian dry mutton dish with roasted spices and curry leaves.",
+    video: "https://www.youtube.com/embed/w9XI7QhuA4U",
+    prep: "20 mins",
+    cook: "45 mins",
+    servings: "4 People",
+    ingredients: [
+        ["Mutton", "500 g"],
+        ["Onion", "2 medium"],
+        ["Ginger-Garlic Paste", "1 tbsp"],
+        ["Chilli Powder", "1 tsp"],
+        ["Coriander Powder", "1 tsp"],
+        ["Turmeric Powder", "½ tsp"],
+        ["Fennel Seeds", "1 tsp"],
+        ["Curry Leaves", "1 sprig"],
+        ["Oil and Salt", "As needed"]
+    ],
+    preparation: "Pressure-cook mutton until tender, then roast it with onions, curry leaves and spices until dry.",
+    steps: [
+        ["Clean Mutton", "Wash the mutton and drain excess water."],
+        ["Pressure-Cook", "Cook mutton with turmeric, salt and a little water until tender."],
+        ["Sauté Spices", "Heat oil in a pan and add fennel seeds and curry leaves."],
+        ["Add Onion", "Add chopped onions and ginger-garlic paste and sauté."],
+        ["Add Masala", "Add chilli powder and coriander powder."],
+        ["Add Mutton", "Add the cooked mutton and mix well."],
+        ["Roast", "Cook uncovered until the moisture evaporates and the masala coats the mutton."],
+        ["Serve", "Serve hot with rice or parotta."]
+    ]
+},
+"bisi-bele-bath": {
+    category: "KARNATAKA • SOUTH INDIAN",
+    name: "Bisi Bele Bath",
+    description: "A flavorful Karnataka rice dish prepared with rice, lentils, vegetables and spices.",
+    video: "https://www.youtube.com/embed/V5qvCn08d58",
+    image: "bisi.jpg",
+    prep: "15 mins",
+    cook: "35 mins",
+    servings: "4",
+    ingredients: [
+        ["Rice", "1 cup"],
+        ["Toor Dal", "1/2 cup"],
+        ["Mixed Vegetables", "1 cup"],
+        ["Tamarind", "Small lemon-sized piece"],
+        ["Bisi Bele Bath Powder", "2 tbsp"],
+        ["Onion", "1"]
+    ],
+    steps: [
+        ["Cook Rice and Dal", "Cook rice and toor dal until soft."],
+        ["Cook Vegetables", "Cook the vegetables separately until tender."],
+        ["Prepare Masala", "Mix vegetables with tamarind and bisi bele bath powder."],
+        ["Combine", "Add cooked rice and dal and mix well."]
+    ]
+},
+
+"mysore-masala-dosa": {
+    category: "KARNATAKA • SOUTH INDIAN",
+    name: "Mysore Masala Dosa",
+    description: "Crispy dosa filled with spicy potato masala and Mysore-style chutney.",
+    video: "https://www.youtube.com/embed/e9XFHjdw3Cg",
+    image: "mysore.jpg",
+    prep: "15 mins",
+    cook: "20 mins",
+    servings: "3",
+    ingredients: [
+        ["Dosa Batter", "3 cups"],
+        ["Potatoes", "3"],
+        ["Onion", "1"],
+        ["Green Chilli", "2"],
+        ["Red Chilli Chutney", "1/2 cup"],
+        ["Curry Leaves", "Few"]
+    ],
+    steps: [
+        ["Prepare Masala", "Cook mashed potatoes with onion, chilli and spices."],
+        ["Heat Tawa", "Heat a dosa tawa over medium heat."],
+        ["Make Dosa", "Spread dosa batter thinly on the tawa."],
+        ["Add Filling", "Spread chutney and add potato masala before folding."]
+    ]
+},
+
+"ragi-mudde": {
+    category: "KARNATAKA • SOUTH INDIAN",
+    name: "Ragi Mudde",
+    description: "A traditional Karnataka dish made with ragi flour and water.",
+    video: "https://www.youtube.com/embed/9Oywa7T6FY4",
+    image: "mudde.jpg",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "3",
+    ingredients: [
+        ["Ragi Flour", "1 cup"],
+        ["Water", "3 cups"],
+        ["Salt", "As needed"],
+        ["Ghee", "1 tsp"]
+    ],
+    steps: [
+        ["Boil Water", "Bring water to a boil with a little salt."],
+        ["Add Flour", "Add ragi flour gradually without forming lumps."],
+        ["Cook", "Cook while stirring until the mixture becomes thick."],
+        ["Shape", "Allow it to cool slightly and shape into balls."]
+    ]
+},
+
+"akki-roti": {
+    category: "KARNATAKA • SOUTH INDIAN",
+    name: "Akki Roti",
+    description: "A soft and flavorful Karnataka flatbread made with rice flour.",
+    video: "https://www.youtube.com/embed/-cwXQ3z22dM",
+    image: "akki.jpg",
+    prep: "15 mins",
+    cook: "20 mins",
+    servings: "3",
+    ingredients: [
+        ["Rice Flour", "2 cups"],
+        ["Onion", "1"],
+        ["Green Chilli", "2"],
+        ["Coriander", "2 tbsp"],
+        ["Grated Coconut", "2 tbsp"],
+        ["Salt", "As needed"]
+    ],
+    steps: [
+        ["Prepare Dough", "Mix rice flour with onion, chilli, coconut and water."],
+        ["Shape", "Spread the dough into a thin round shape."],
+        ["Cook", "Cook on a heated tawa until both sides are cooked."],
+        ["Serve", "Serve hot with chutney or curry."]
+    ]
+},
+
+"puttu-kadala-curry": {
+    category: "KERALA • SOUTH INDIAN",
+    name: "Puttu with Kadala Curry",
+    description: "A traditional Kerala breakfast pairing steamed rice puttu with black chickpea curry.",
+    video: "https://www.youtube.com/embed/Rr72jCYwMdc",
+    image: "puttu.webp",
+    prep: "20 mins",
+    cook: "30 mins",
+    servings: "4",
+    ingredients: [
+        ["Rice Flour", "2 cups"],
+        ["Coconut", "1 cup"],
+        ["Black Chickpeas", "1 cup"],
+        ["Onion", "1"],
+        ["Tomato", "1"],
+        ["Curry Powder", "2 tsp"]
+    ],
+    steps: [
+        ["Prepare Puttu", "Mix rice flour with water and steam with grated coconut."],
+        ["Cook Chickpeas", "Cook soaked black chickpeas until tender."],
+        ["Prepare Curry", "Cook onion, tomato and spices and add chickpeas."],
+        ["Serve", "Serve warm puttu with kadala curry."]
+    ]
+},
+
+"kerala-parotta-veg-curry": {
+    category: "KERALA • SOUTH INDIAN",
+    name: "Kerala Parotta with Veg Curry",
+    description: "Layered Kerala-style parotta served with a flavorful vegetable curry.",
+    video: "https://www.youtube.com/embed/BD7wsI61lHQ",
+    image: "kerala.jpg",
+    prep: "25 mins",
+    cook: "30 mins",
+    servings: "4",
+    ingredients: [
+        ["Maida", "2 cups"],
+        ["Mixed Vegetables", "2 cups"],
+        ["Onion", "1"],
+        ["Tomato", "2"],
+        ["Coconut Milk", "1 cup"],
+        ["Spices", "As needed"]
+    ],
+    steps: [
+        ["Prepare Dough", "Make a soft dough using flour and water."],
+        ["Prepare Parotta", "Shape and cook the layered parotta on a tawa."],
+        ["Make Curry", "Cook vegetables with onion, tomato and spices."],
+        ["Finish", "Add coconut milk and cook gently before serving."]
+    ]
+},
+
+"kallappam": {
+    category: "KERALA • SOUTH INDIAN",
+    name: "Kallappam",
+    description: "A soft Kerala rice pancake with a mildly fermented flavour.",
+    video: "https://www.youtube.com/embed/XF5zLP57rw0",
+    image: "appam.jpg",
+    prep: "20 mins",
+    cook: "20 mins",
+    servings: "4",
+    ingredients: [
+        ["Rice", "2 cups"],
+        ["Grated Coconut", "1 cup"],
+        ["Cooked Rice", "1/2 cup"],
+        ["Yeast", "1 tsp"],
+        ["Sugar", "1 tsp"],
+        ["Salt", "As needed"]
+    ],
+    steps: [
+        ["Soak Rice", "Soak rice and grind it with coconut and cooked rice."],
+        ["Ferment", "Add yeast and allow the batter to ferment."],
+        ["Heat Pan", "Heat a lightly greased pan."],
+        ["Cook", "Pour batter and cook until the appam is soft and cooked."]
+    ]
+},
+
+"theeyal": {
+    category: "KERALA • SOUTH INDIAN",
+    name: "Theeyal",
+    description: "A traditional Kerala curry prepared with roasted coconut and tamarind.",
+    video: "https://www.youtube.com/embed/2vNm4mGH1-Q",
+    image: "theeyal.jpg",
+    prep: "15 mins",
+    cook: "25 mins",
+    servings: "4",
+    ingredients: [
+        ["Coconut", "1 cup"],
+        ["Small Onions", "10"],
+        ["Tamarind", "Small piece"],
+        ["Coriander Seeds", "1 tbsp"],
+        ["Red Chillies", "4"],
+        ["Turmeric", "1/2 tsp"]
+    ],
+    steps: [
+        ["Roast Coconut", "Roast coconut with spices until aromatic."],
+        ["Grind", "Grind the roasted mixture into a paste."],
+        ["Prepare Curry", "Cook onions with tamarind water."],
+        ["Combine", "Add the coconut paste and simmer until well combined."]
+    ]
+},
+
+"pulihora": {
+    category: "ANDHRA PRADESH • SOUTH INDIAN",
+    name: "Pulihora",
+    description: "Tangy and flavorful tamarind rice popular in Andhra cuisine.",
+    video: "https://www.youtube.com/embed/ghK7c4kdyZg",
+    image: "pulisadham.jpg",
+    prep: "10 mins",
+    cook: "20 mins",
+    servings: "4",
+    ingredients: [
+        ["Cooked Rice", "3 cups"],
+        ["Tamarind", "Small lemon-sized piece"],
+        ["Peanuts", "1/4 cup"],
+        ["Green Chilli", "2"],
+        ["Turmeric", "1/2 tsp"],
+        ["Curry Leaves", "Few"]
+    ],
+    steps: [
+        ["Prepare Tamarind Mix", "Cook tamarind extract with turmeric and spices."],
+        ["Prepare Tempering", "Roast peanuts and add curry leaves and chilli."],
+        ["Add Rice", "Add cooked rice to the mixture."],
+        ["Mix", "Mix gently until the rice is evenly coated."]
+    ]
+},
+
+"gutti-vankaya-curry": {
+    category: "ANDHRA PRADESH • SOUTH INDIAN",
+    name: "Gutti Vankaya Curry",
+    description: "Stuffed baby brinjals cooked in a rich and spicy Andhra-style gravy.",
+    video: "https://www.youtube.com/embed/mWRS3p_bAdw",
+    image: "gutti.jpg",
+    prep: "20 mins",
+    cook: "30 mins",
+    servings: "4",
+    ingredients: [
+        ["Baby Brinjals", "8"],
+        ["Peanuts", "1/4 cup"],
+        ["Coconut", "1/4 cup"],
+        ["Onion", "1"],
+        ["Tamarind", "2 tbsp"],
+        ["Spice Powder", "2 tbsp"]
+    ],
+    steps: [
+        ["Prepare Filling", "Grind peanuts, coconut and spices into a paste."],
+        ["Stuff Brinjals", "Make small cuts in the brinjals and fill them with the paste."],
+        ["Cook", "Cook the stuffed brinjals gently in a pan."],
+        ["Add Gravy", "Add tamarind water and cook until the brinjals are tender."]
+    ]
+},
+
+"gongura-pachadi": {
+    category: "ANDHRA PRADESH • SOUTH INDIAN",
+    name: "Gongura Pachadi",
+    description: "A tangy Andhra chutney made using gongura leaves and spices.",
+    video: "https://www.youtube.com/embed/LcDpqnOeyLM",
+    image: "gongura-pachadi.jpg",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "4",
+    ingredients: [
+        ["Gongura Leaves", "2 cups"],
+        ["Red Chillies", "5"],
+        ["Garlic", "4 cloves"],
+        ["Mustard Seeds", "1 tsp"],
+        ["Cumin Seeds", "1 tsp"],
+        ["Oil", "2 tbsp"]
+    ],
+    steps: [
+        ["Cook Gongura", "Cook gongura leaves until they become soft."],
+        ["Roast Spices", "Roast chillies and spices until aromatic."],
+        ["Grind", "Grind gongura and roasted ingredients together."],
+        ["Temper", "Add a simple mustard and curry leaf tempering."]
+    ]
+},
+
+"andhra-tomato-pappu": {
+    category: "ANDHRA PRADESH • SOUTH INDIAN",
+    name: "Andhra Tomato Pappu",
+    description: "A comforting Andhra dal prepared with tomatoes and mild spices.",
+    video: "https://www.youtube.com/embed/CRsw7Yq5ADU",
+    image: "Tomato-Rice.jpg",
+    prep: "10 mins",
+    cook: "25 mins",
+    servings: "4",
+    ingredients: [
+        ["Toor Dal", "1 cup"],
+        ["Tomatoes", "3"],
+        ["Onion", "1"],
+        ["Green Chilli", "2"],
+        ["Turmeric", "1/2 tsp"],
+        ["Coriander", "2 tbsp"]
+    ],
+    steps: [
+        ["Cook Dal", "Cook toor dal until soft."],
+        ["Cook Tomatoes", "Cook tomatoes, onion and green chilli."],
+        ["Combine", "Add cooked dal and turmeric."],
+        ["Simmer", "Simmer until the flavours combine well."]
+    ]
+},
+
+"kancheepuram-idli": {
+    category: "TAMIL NADU • SOUTH INDIAN",
+    name: "Kancheepuram Idli",
+    description: "A traditional Tamil Nadu idli flavored with pepper, cumin and ginger.",
+    video: "https://www.youtube.com/embed/t9MLnZaI6hQ",
+    image: "kanchi.jpg",
+    prep: "20 mins",
+    cook: "25 mins",
+    servings: "4",
+    ingredients: [
+        ["Idli Batter", "3 cups"],
+        ["Curd", "1/2 cup"],
+        ["Pepper", "1 tsp"],
+        ["Cumin", "1 tsp"],
+        ["Ginger", "1 tsp"],
+        ["Cashews", "2 tbsp"]
+    ],
+    steps: [
+        ["Prepare Batter", "Mix idli batter with curd and the seasonings."],
+        ["Prepare Tempering", "Temper pepper, cumin, ginger and cashews."],
+        ["Add to Batter", "Mix the tempering into the batter."],
+        ["Steam", "Pour into molds and steam until completely cooked."]
+    ]
+},
+
+"paruppu-usili": {
+    category: "TAMIL NADU • SOUTH INDIAN",
+    name: "Paruppu Usili",
+    description: "A traditional Tamil Nadu dish made with steamed lentil crumble and vegetables.",
+    video: "https://www.youtube.com/embed/zG03jy9ahp4",
+    image: "usili.jpg",
+    prep: "20 mins",
+    cook: "25 mins",
+    servings: "4",
+    ingredients: [
+        ["Toor Dal", "1 cup"],
+        ["Chana Dal", "1/2 cup"],
+        ["Beans", "2 cups"],
+        ["Red Chillies", "3"],
+        ["Mustard Seeds", "1 tsp"],
+        ["Curry Leaves", "Few"]
+    ],
+    steps: [
+        ["Soak Dal", "Soak the dals and grind them with chillies."],
+        ["Steam", "Steam the ground dal mixture until firm."],
+        ["Crumble", "Crumble the steamed dal mixture."],
+        ["Combine", "Cook beans and mix with the dal crumble."]
+    ]
+},
+
+"thengai-sadam": {
+    category: "TAMIL NADU • SOUTH INDIAN",
+    name: "Thengai Sadam",
+    description: "Simple and aromatic coconut rice prepared with freshly grated coconut.",
+    video: "https://www.youtube.com/embed/h72FPP089pg",
+    image: "coconut-rice.jpg",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "3",
+    ingredients: [
+        ["Cooked Rice", "3 cups"],
+        ["Grated Coconut", "1 cup"],
+        ["Green Chilli", "2"],
+        ["Cashews", "2 tbsp"],
+        ["Mustard Seeds", "1 tsp"],
+        ["Curry Leaves", "Few"]
+    ],
+    steps: [
+        ["Prepare Tempering", "Heat oil and add mustard seeds, chilli and curry leaves."],
+        ["Add Coconut", "Add grated coconut and sauté lightly."],
+        ["Add Rice", "Add cooked rice and mix gently."],
+        ["Finish", "Add roasted cashews and serve."]
+    ]
+},
+"mango-lassi": {
+    category: "INDIAN • DRINK",
+    name: "Mango Lassi",
+    description: "A creamy and refreshing yogurt-based mango drink.",
+    video: "https://www.youtube.com/embed/AMKoec4Ueo0",
+    image: "mango-lassi-recipe.jpg",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "2",
+    ingredients: [
+        ["Mango", "1 cup"],
+        ["Yogurt", "1 cup"],
+        ["Milk", "1/2 cup"],
+        ["Sugar", "2 tbsp"],
+        ["Cardamom", "1/4 tsp"]
+    ],
+    steps: [
+        ["Prepare Mango", "Peel and cut the mango into pieces."],
+        ["Blend", "Add mango, yogurt, milk and sugar to a blender."],
+        ["Add Flavour", "Add cardamom and blend until smooth."],
+        ["Serve", "Pour into glasses and serve chilled."]
+    ]
+},
+
+"badam-milk": {
+    category: "INDIAN • DRINK",
+    name: "Badam Milk",
+    description: "A rich and flavorful milk drink prepared with almonds and cardamom.",
+    video: "https://www.youtube.com/embed/LrmNSksAYbE",
+    image: "badham.jpg",
+    prep: "15 mins",
+    cook: "10 mins",
+    servings: "2",
+    ingredients: [
+        ["Almonds", "15"],
+        ["Milk", "2 cups"],
+        ["Sugar", "2 tbsp"],
+        ["Cardamom", "2 pods"],
+        ["Saffron", "Few strands"]
+    ],
+    steps: [
+        ["Soak Almonds", "Soak almonds and remove their skins."],
+        ["Make Paste", "Grind the almonds with a little milk."],
+        ["Heat Milk", "Warm milk and add the almond paste."],
+        ["Finish", "Add sugar, cardamom and saffron and serve warm."]
+    ]
+},
+
+"rose-milk": {
+    category: "INDIAN • DRINK",
+    name: "Rose Milk",
+    description: "A sweet and refreshing milk drink with a delicate rose flavour.",
+    video: "https://www.youtube.com/embed/w6JW2vggG04",
+    image: "rose-milk-recipe-3.jpg",
+    prep: "5 mins",
+    cook: "0 mins",
+    servings: "2",
+    ingredients: [
+        ["Milk", "2 cups"],
+        ["Rose Syrup", "3 tbsp"],
+        ["Sugar", "1 tbsp"],
+        ["Ice Cubes", "As needed"]
+    ],
+    steps: [
+        ["Prepare Milk", "Pour chilled milk into a bowl."],
+        ["Add Rose Syrup", "Add rose syrup and sugar."],
+        ["Mix", "Stir well until evenly combined."],
+        ["Serve", "Add ice cubes and serve chilled."]
+    ]
+},
+
+"jal-jeera": {
+    category: "NORTH INDIAN • DRINK",
+    name: "Jal Jeera",
+    description: "A tangy and refreshing cumin-flavoured Indian drink.",
+    video: "https://www.youtube.com/embed/J7UDjNVxUFw",
+    image: "jaljeera.jpg",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "3",
+    ingredients: [
+        ["Water", "3 cups"],
+        ["Cumin Powder", "1 tsp"],
+        ["Mint", "1/2 cup"],
+        ["Lemon Juice", "2 tbsp"],
+        ["Black Salt", "1/2 tsp"]
+    ],
+    steps: [
+        ["Prepare Mint", "Blend mint leaves with a little water."],
+        ["Mix", "Combine mint water with the remaining water."],
+        ["Add Flavours", "Add cumin powder, lemon juice and black salt."],
+        ["Serve", "Mix well and serve chilled."]
+    ]
+},
+
+"aam-panna": {
+    category: "INDIAN • DRINK",
+    name: "Aam Panna",
+    description: "A tangy raw mango drink flavored with cumin and mint.",
+    video: "https://www.youtube.com/embed/OwXH_tXSwl8",
+    image: "aampaana.jpg",
+    prep: "10 mins",
+    cook: "15 mins",
+    servings: "3",
+    ingredients: [
+        ["Raw Mango", "2"],
+        ["Sugar", "3 tbsp"],
+        ["Cumin Powder", "1 tsp"],
+        ["Mint Leaves", "1/4 cup"],
+        ["Water", "3 cups"]
+    ],
+    steps: [
+        ["Cook Mango", "Cook raw mangoes until they become soft."],
+        ["Extract Pulp", "Remove the pulp and mash it."],
+        ["Mix", "Add sugar, cumin powder and mint."],
+        ["Serve", "Mix with chilled water and serve."]
+    ]
+},
+
+"nannari-sharbat": {
+    category: "SOUTH INDIAN • DRINK",
+    name: "Nannari Sharbat",
+    description: "A traditional summer drink made with aromatic nannari syrup.",
+    video: "https://www.youtube.com/embed/WMNx0Auo-Io",
+    image: "sarbath.jpg",
+    prep: "5 mins",
+    cook: "0 mins",
+    servings: "2",
+    ingredients: [
+        ["Nannari Syrup", "4 tbsp"],
+        ["Water", "2 cups"],
+        ["Lemon Juice", "1 tbsp"],
+        ["Ice Cubes", "As needed"]
+    ],
+    steps: [
+        ["Add Syrup", "Add nannari syrup to a glass."],
+        ["Add Water", "Pour chilled water over the syrup."],
+        ["Add Lemon", "Add fresh lemon juice."],
+        ["Serve", "Mix well and serve with ice."]
+    ]
+},
+
+"panakam": {
+    category: "SOUTH INDIAN • DRINK",
+    name: "Panakam",
+    description: "A traditional South Indian jaggery drink flavored with ginger and cardamom.",
+    video: "https://www.youtube.com/embed/ChxClGKMsWY",
+    image: "panakam-Recipe.jpg",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "3",
+    ingredients: [
+        ["Jaggery", "1/2 cup"],
+        ["Water", "3 cups"],
+        ["Dry Ginger Powder", "1/2 tsp"],
+        ["Cardamom", "2"],
+        ["Lemon Juice", "1 tbsp"]
+    ],
+    steps: [
+        ["Dissolve Jaggery", "Mix jaggery with water until dissolved."],
+        ["Add Spices", "Add dry ginger powder and crushed cardamom."],
+        ["Add Lemon", "Add lemon juice and mix."],
+        ["Serve", "Strain if needed and serve chilled."]
+    ]
+},
+
+"tender-coconut-water": {
+    category: "NATURAL • DRINK",
+    name: "Tender Coconut Water",
+    description: "A naturally refreshing drink served directly from tender coconut.",
+    video: "https://www.youtube.com/embed/u2oq24OokLI",
+    image: "coco.jpg",
+    prep: "5 mins",
+    cook: "0 mins",
+    servings: "1",
+    ingredients: [
+        ["Tender Coconut", "1"]
+    ],
+    steps: [
+        ["Open Coconut", "Carefully open the tender coconut."],
+        ["Collect Water", "Pour the coconut water into a glass."],
+        ["Add Coconut", "Add some tender coconut flesh if desired."],
+        ["Serve", "Serve fresh."]
+    ]
+},
+
+"sugarcane-juice": {
+    category: "INDIAN • DRINK",
+    name: "Sugarcane Juice",
+    description: "A naturally sweet and refreshing juice made from fresh sugarcane.",
+    video: "https://www.youtube.com/embed/XwvbGIYORcQ",
+    image: "sugar.jpg",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "2",
+    ingredients: [
+        ["Sugarcane Juice", "3 cups"],
+        ["Lemon Juice", "1 tbsp"],
+        ["Ginger", "Small piece"],
+        ["Ice", "As needed"]
+    ],
+    steps: [
+        ["Prepare Juice", "Use freshly extracted sugarcane juice."],
+        ["Add Ginger", "Add a small amount of crushed ginger."],
+        ["Add Lemon", "Add lemon juice for freshness."],
+        ["Serve", "Mix well and serve immediately."]
+    ]
+},
+
+"watermelon-juice": {
+    category: "FRUIT • DRINK",
+    name: "Watermelon Juice",
+    description: "A light and refreshing summer drink made with fresh watermelon.",
+    video: "https://www.youtube.com/embed/4CJAHF9LK-8",
+    image: "watermelon.jpg",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "2",
+    ingredients: [
+        ["Watermelon", "3 cups"],
+        ["Lemon Juice", "1 tbsp"],
+        ["Mint Leaves", "Few"]
+    ],
+    steps: [
+        ["Cut Watermelon", "Remove the rind and cut the watermelon into pieces."],
+        ["Blend", "Blend the watermelon until smooth."],
+        ["Add Lemon", "Add lemon juice and mix."],
+        ["Serve", "Garnish with mint and serve chilled."]
+    ]
+},
+
+"pineapple-juice": {
+    category: "FRUIT • DRINK",
+    name: "Pineapple Juice",
+    description: "A sweet and tangy tropical drink made with fresh pineapple.",
+    video: "https://www.youtube.com/embed/Zldotrfh_Xk",
+    image: "pinejuice.jpg",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "2",
+    ingredients: [
+        ["Pineapple", "2 cups"],
+        ["Water", "1 cup"],
+        ["Lemon Juice", "1 tbsp"],
+        ["Sugar", "Optional"]
+    ],
+    steps: [
+        ["Prepare Pineapple", "Peel and cut pineapple into small pieces."],
+        ["Blend", "Blend pineapple with water."],
+        ["Add Lemon", "Add lemon juice and mix."],
+        ["Serve", "Strain if desired and serve chilled."]
+    ]
+},
+
+"orange-juice": {
+    category: "FRUIT • DRINK",
+    name: "Orange Juice",
+    description: "A fresh citrus drink prepared from ripe oranges.",
+    video: "https://www.youtube.com/embed/w6IjwKOB_t8",
+    image: "orangejuice.jpg",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "2",
+    ingredients: [
+        ["Oranges", "4"]
+    ],
+    steps: [
+        ["Prepare Oranges", "Wash and cut the oranges."],
+        ["Extract Juice", "Squeeze the oranges or use a juicer."],
+        ["Strain", "Strain the juice if desired."],
+        ["Serve", "Serve fresh and chilled."]
+    ]
+},
+
+"lemon-mint-cooler": {
+    category: "REFRESHING • DRINK",
+    name: "Lemon Mint Cooler",
+    description: "A refreshing lemon drink infused with fresh mint.",
+    video: "https://www.youtube.com/embed/_Dk3TRd9nho",
+    image: "lime_mint_tea.avif",
+    prep: "10 mins",
+    cook: "0 mins",
+    servings: "2",
+    ingredients: [
+        ["Lemon", "2"],
+        ["Mint Leaves", "1/4 cup"],
+        ["Water", "2 cups"],
+        ["Sugar", "2 tbsp"],
+        ["Ice", "As needed"]
+    ],
+    steps: [
+        ["Prepare Mint", "Crush mint leaves gently."],
+        ["Add Lemon", "Add fresh lemon juice."],
+        ["Mix", "Add water and sugar and mix well."],
+        ["Serve", "Add ice and serve chilled."]
+    ]
+},
+
+"ginger-tea": {
+    category: "INDIAN • DRINK",
+    name: "Ginger Tea",
+    description: "A warm and aromatic tea infused with fresh ginger.",
+    video: "https://www.youtube.com/embed/ZtDGYQwcBYA",
+    image: "Ginger-Tea.jpg",
+    prep: "5 mins",
+    cook: "10 mins",
+    servings: "2",
+    ingredients: [
+        ["Water", "1 cup"],
+        ["Milk", "1 cup"],
+        ["Tea Powder", "2 tsp"],
+        ["Ginger", "1 inch"],
+        ["Sugar", "As needed"]
+    ],
+    steps: [
+        ["Boil Water", "Bring water to a gentle boil."],
+        ["Add Ginger", "Add crushed ginger and simmer briefly."],
+        ["Add Tea", "Add tea powder and milk."],
+        ["Finish", "Add sugar, strain and serve warm."]
+    ]
+},
+
+"cold-coffee": {
+    category: "BEVERAGE • DRINK",
+    name: "Cold Coffee",
+    description: "A chilled creamy coffee drink perfect for a refreshing break.",
+    video: "https://www.youtube.com/embed/LcSYKsdZCM8",
+    image: "iced-coffee-recipe.webp",
+    prep: "5 mins",
+    cook: "0 mins",
+    servings: "2",
+    ingredients: [
+        ["Cold Milk", "2 cups"],
+        ["Coffee Powder", "2 tsp"],
+        ["Sugar", "2 tbsp"],
+        ["Ice Cubes", "As needed"]
+    ],
+    steps: [
+        ["Prepare Coffee", "Dissolve coffee powder in a little milk."],
+        ["Blend", "Add cold milk, sugar and ice to a blender."],
+        ["Mix", "Blend until smooth and slightly frothy."],
+        ["Serve", "Pour into glasses and serve chilled."]
+    ]
+},
+
+    };
+    
+    // Find the requested recipe
+const normalizedFood = (food || "")
+    .toLowerCase()
+    .trim()
+    .replace(/-/g, " ")
+    .replace(/\s+/g, " ");
+
+const matchedKey = Object.keys(recipes).find(key => {
+
+    const normalizedKey = key
+        .toLowerCase()
+        .trim()
+        .replace(/-/g, " ")
+        .replace(/\s+/g, " ");
+
+    const normalizedName = (recipes[key].name || "")
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, " ");
+
+    return normalizedKey === normalizedFood ||
+           normalizedName === normalizedFood;
+});
+if (!matchedKey) {
+    alert("❌ Sorry! Recipe not found.\n\nPlease check the spelling and try again.");
+    window.location.href = "chat.html";
+}
+
+if (matchedKey) {
+
+    const recipe = recipes[matchedKey];
+
+    // Check selected recipe
+    if (food && recipes[food]) {
+
+        const recipe = recipes[food];
+
+        // Display recipe video
+document.getElementById("videoFood").textContent =
+    recipe.name;
+
+document.getElementById("recipeVideo").src =
+    recipe.video || "";
+    }
+
+        // Basic details
+        document.getElementById("recipeName").textContent = recipe.name;
+
+        document.getElementById("recipeCategory").textContent =
+            recipe.category;
+
+        document.getElementById("recipeDescription").textContent =
+            recipe.description;
+
+        document.getElementById("recipeImage").src =
+            recipe.image;
+
+        document.getElementById("recipeImage").alt =
+            recipe.name;
+
+        document.getElementById("prepTime").textContent =
+            recipe.prep;
+
+        document.getElementById("cookTime").textContent =
+            recipe.cook;
+
+        document.getElementById("servings").textContent =
+            recipe.servings;
+
+        document.getElementById("preparation").textContent =
+            recipe.preparation;
+
+        document.getElementById("stepTitle").textContent =
+            recipe.name;
+
+        document.getElementById("videoFood").textContent =
+            recipe.name;
+
+
+        // Ingredients
+        const ingredientList =
+            document.getElementById("ingredients");
+
+        ingredientList.innerHTML = "";
+
+        recipe.ingredients.forEach(function(item) {
+
+            ingredientList.innerHTML += `
+                <li>
+                    <span>${item[0]}</span>
+                    <b>${item[1]}</b>
+                </li>
+            `;
+
+        });
+
+
+        // Steps
+        const stepsContainer =
+            document.getElementById("steps");
+
+        stepsContainer.innerHTML = "";
+
+        recipe.steps.forEach(function(step, index) {
+
+            let number = String(index + 1).padStart(2, "0");
+
+            stepsContainer.innerHTML += `
+                <div class="step">
+
+                    <div class="step-number">
+                        ${number}
+                    </div>
+
+                    <div>
+                        <h3>${step[0]}</h3>
+
+                        <p>
+                            ${step[1]}
+                        </p>
+                    </div>
+
+                </div>
+            `;
+
+        });
+        
+const backButton = document.getElementById("backButton");
+
+const lunchFoods = [
+    "vegetable-biryani",
+    "chicken-biryani",
+    "tomato-rice",
+    "lemon-rice",
+    "curd-rice",
+    "sambar-rice",
+    "rajma-rice",
+    "veg-fried-rice",
+    "chicken-fried-rice",
+    "paneer-butter-masala-roti",
+    "chole-rice",
+    "vegetable-pulao",
+    "chicken-curry-rice",
+    "dal-tadka-rice",
+    "veg-noodles"
+];
+
+const dinnerFoods = [
+    "roti-dal",
+    "aloo-gobi",
+    "palak-paneer",
+    "vegetable-manchurian",
+    "chicken-tikka",
+    "fish-curry",
+    "egg-kothu-parotta",
+    "mushroom-curry",
+    "vegetable-stew",
+    "stuffed-bell-peppers",
+    "macaroni",
+    "lasagna",
+    "tacos",
+    "burrito",
+    "falafel-wrap"
+];
+
+if (lunchFoods.includes(food)) {
+
+    backButton.href = "newlunch.html";
+    backButton.textContent = "← Back to Lunch";
+
+} else if (dinnerFoods.includes(food)) {
+
+    backButton.href = "newdinner.html";
+    backButton.textContent = "← Back to Dinner";
+
+} else if (
+    food === "samosa" ||
+    food === "pakora" ||
+    food === "murukku" ||
+    food === "aloo-tikki" ||
+    food === "cutlet" ||
+    food === "spring-rolls" ||
+    food === "french-fries" ||
+    food === "corn-cheese-balls" ||
+    food === "bread-rolls" ||
+    food === "dhokla" ||
+    food === "kachori" ||
+    food === "bhel-puri" ||
+    food === "pani-puri" ||
+    food === "masala-corn" ||
+    food === "onion-rings"
+) {
+    backButton.href = "newsnacks.html";
+    backButton.textContent = "← Back to Snacks";
+}
+else if (
+    food === "gulab-jamun" ||
+    food === "rasgulla" ||
+    food === "jalebi" ||
+    food === "kheer" ||
+    food === "carrot-halwa" ||
+    food === "shahi-tukda" ||
+    food === "rasmalai" ||
+    food === "kulfi" ||
+    food === "brownie" ||
+    food === "cheesecake" ||
+    food === "chocolate-mousse" ||
+    food === "tiramisu" ||
+    food === "apple-pie" ||
+    food === "donut" ||
+    food === "pudding"
+) {
+
+    backButton.href = "newdessert.html";
+    backButton.textContent = "← Back to Desserts";
+
+}
+else if (
+    food === "navadhanyam-sundal" ||
+    food === "ragi-kanji" ||
+    food === "kambu-koozh" ||
+    food === "thinai-pongal" ||
+    food === "samai-upma" ||
+    food === "varagu-rice-bowl" ||
+    food === "kollu-rasam" ||
+    food === "green-gram-sundal" ||
+    food === "sprouts-salad" ||
+    food === "millet-vegetable-salad" ||
+    food === "quinoa-salad" ||
+    food === "oats-vegetable-bowl" ||
+    food === "chia-seed-pudding" ||
+    food === "mixed-fruit-nut-bowl" ||
+    food === "vegetable-smoothie"
+) {
+
+    backButton.href = "newhealthy.html";
+    backButton.textContent = "← Back to Healthy";
+
+}
+else if (
+    food === "mor-kuzhambu" ||
+    food === "palaamoos-sambar" ||
+    food === "paal-kuzhambu" ||
+    food === "avial" ||
+    food === "kootu" ||
+    food === "keerai-masiyal" ||
+    food === "poriyal" ||
+    food === "vatha-kuzhambu" ||
+    food === "kathirikai-kara-kuzhambu" ||
+    food === "vegetable-kurma" ||
+    food === "dal-makhani" ||
+    food === "malai-kofta" ||
+    food === "matar-paneer" ||
+    food === "aloo-palak" ||
+    food === "chana-masala"
+) {
+
+    backButton.href = "newvegeterian.html";
+    backButton.textContent = "← Back to Vegetarian";
+
+}
+else if (food === "chicken-65" ||
+         food === "chicken-chettinad" ||
+         food === "mutton-curry" ||
+         food === "mutton-biryani" ||
+         food === "fish-fry" ||
+         food === "fish-tikka" ||
+         food === "prawn-masala" ||
+         food === "prawn-fry" ||
+         food === "crab-masala" ||
+         food === "chicken-kebab" ||
+         food === "mutton-kebab" ||
+         food === "egg-masala" ||
+         food === "fish-molee" ||
+         food === "chicken-saag" ||
+         food === "mutton-sukka") {
+
+    backButton.href = "newnonvegeterian.html";
+    backButton.textContent = "← Back to Non-Vegetarian";
+}
+else if (
+    food === "bisi-bele-bath" ||
+    food === "mysore-masala-dosa" ||
+    food === "ragi-mudde" ||
+    food === "akki-roti" ||
+    food === "puttu-kadala-curry" ||
+    food === "kerala-parotta-veg-curry" ||
+    food === "kallappam" ||
+    food === "theeyal" ||
+    food === "pulihora" ||
+    food === "gutti-vankaya-curry" ||
+    food === "gongura-pachadi" ||
+    food === "andhra-tomato-pappu" ||
+    food === "kancheepuram-idli" ||
+    food === "paruppu-usili" ||
+    food === "thengai-sadam"
+) {
+    backButton.href = "newsouthindian.html";
+    backButton.textContent = "← Back to South Indian";
+}
+else if (
+    food === "mango-lassi" ||
+    food === "badam-milk" ||
+    food === "rose-milk" ||
+    food === "jal-jeera" ||
+    food === "aam-panna" ||
+    food === "nannari-sharbat" ||
+    food === "panakam" ||
+    food === "tender-coconut-water" ||
+    food === "sugarcane-juice" ||
+    food === "watermelon-juice" ||
+    food === "pineapple-juice" ||
+    food === "orange-juice" ||
+    food === "lemon-mint-cooler" ||
+    food === "ginger-tea" ||
+    food === "cold-coffee"
+) {
+    backButton.href = "newdrinks.html";
+    backButton.textContent = "← Back to Drinks";
+}
+else {
+
+    backButton.href = "newbreak.html";
+    backButton.textContent = "← Back to Breakfast";
+
+}
+
+    }
+
+</script>
+
+</body>
+</html>

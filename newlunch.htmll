@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lunch | Smart Recipe Finder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="breakfast-page">
+
+    <!-- Back to Home -->
+    <a href="chat.html" class="back-btn">
+        ← Back to Home
+    </a>
+
+
+    <!-- Heading -->
+    <div class="recipe-header">
+
+        <p class="recipe-category">
+            SMART RECIPE FINDER
+        </p>
+
+        <h1>Lunch</h1>
+
+        <p class="recipe-description">
+            Delicious and satisfying lunch recipes for a wholesome meal.
+        </p>
+
+    </div>
+
+
+    <!-- 15 Lunch Foods -->
+    <div class="breakfast-container">
+
+
+        <!-- 1 Vegetable Biryani -->
+        <a href="recipe.html?food=vegetable-biryani" class="food-link">
+
+            <div class="food-card">
+
+                <img src="vegetablebiryani.jpg"
+                     alt="Vegetable Biryani">
+
+                <h3>Vegetable Biryani</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 2 Chicken Biryani -->
+        <a href="recipe.html?food=chicken-biryani" class="food-link">
+
+            <div class="food-card">
+
+                <img src="chickenbiryani.jpg"
+                     alt="Chicken Biryani">
+
+                <h3>Chicken Biryani</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 3 Tomato Rice -->
+        <a href="recipe.html?food=tomato-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="tomatorice.jpg"
+                     alt="Tomato Rice">
+
+                <h3>Tomato Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 4 Lemon Rice -->
+        <a href="recipe.html?food=lemon-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="lemonrice.jpg"
+                     alt="Lemon Rice">
+
+                <h3>Lemon Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 5 Curd Rice -->
+        <a href="recipe.html?food=curd-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="curdrice.jpg"
+                     alt="Curd Rice">
+
+                <h3>Curd Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 6 Sambar Rice -->
+        <a href="recipe.html?food=sambar-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="sambarrice.jpg"
+                     alt="Sambar Rice">
+
+                <h3>Sambar Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 7 Rajma Rice -->
+        <a href="recipe.html?food=rajma-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="rajmarice.jpg"
+                     alt="Rajma Rice">
+
+                <h3>Rajma Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 8 Veg Fried Rice -->
+        <a href="recipe.html?food=veg-fried-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="vegfriedrice.jpg"
+                     alt="Veg Fried Rice">
+
+                <h3>Veg Fried Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 9 Chicken Fried Rice -->
+        <a href="recipe.html?food=chicken-fried-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="chickenfriedrice.jpg"
+                     alt="Chicken Fried Rice">
+
+                <h3>Chicken Fried Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 10 Paneer Butter Masala + Roti -->
+        <a href="recipe.html?food=paneer-butter-masala-roti" class="food-link">
+
+            <div class="food-card">
+
+                <img src="paneerbuttermasala.jpg"
+                     alt="Paneer Butter Masala and Roti">
+
+                <h3>Paneer Butter Masala + Roti</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 11 Chole + Rice -->
+        <a href="recipe.html?food=chole-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="cholerice.jpg"
+                     alt="Chole and Rice">
+
+                <h3>Chole + Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 12 Vegetable Pulao -->
+        <a href="recipe.html?food=vegetable-pulao" class="food-link">
+
+            <div class="food-card">
+
+                <img src="vegetablepulao.jpg"
+                     alt="Vegetable Pulao">
+
+                <h3>Vegetable Pulao</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 13 Chicken Curry + Rice -->
+        <a href="recipe.html?food=chicken-curry-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="chickencurryrice.jpg"
+                     alt="Chicken Curry and Rice">
+
+                <h3>Chicken Curry + Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 14 Dal Tadka + Rice -->
+        <a href="recipe.html?food=dal-tadka-rice" class="food-link">
+
+            <div class="food-card">
+
+                <img src="daltadkarice.jpg"
+                     alt="Dal Tadka and Rice">
+
+                <h3>Dal Tadka + Rice</h3>
+
+            </div>
+
+        </a>
+
+
+        <!-- 15 Veg Noodles -->
+        <a href="recipe.html?food=veg-noodles" class="food-link">
+
+            <div class="food-card">
+
+                <img src="vegnoodles.jpg"
+                     alt="Veg Noodles">
+
+                <h3>Veg Noodles</h3>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
