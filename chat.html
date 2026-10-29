@@ -653,7 +653,7 @@ document.getElementById("ingredientOK").addEventListener("click", async function
     recipeList.innerHTML = "<p>Searching recipes...</p>";
 
     try {
-        const response = await fetch("http://localhost:3000/recipes");
+        const response = await fetch("https://smart-recipe-finder-m8xp.onrender.com/recipes");
 
         if (!response.ok) {
             throw new Error("Could not load recipes from the backend.");
@@ -670,8 +670,8 @@ document.getElementById("ingredientOK").addEventListener("click", async function
 
         for (const recipe of recipes) {
             const detailResponse = await fetch(
-                `http://localhost:3000/recipe/${recipe.id}`
-            );
+    `https://smart-recipe-finder-m8xp.onrender.com/recipe/${recipe.id}`
+);
 
             if (!detailResponse.ok) continue;
 
