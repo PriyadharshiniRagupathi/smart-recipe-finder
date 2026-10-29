@@ -51,6 +51,9 @@ body{
 #ingredientResults h2{
     color:white;
 } 
+#ingredientRecipeList{
+color: whitesmoke;
+}
 .ok-btn{
     width:100%;
     margin-top:4px;
