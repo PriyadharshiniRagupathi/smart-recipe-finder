@@ -48,6 +48,9 @@ body{
     margin-right:8px;
     accent-color:#637d42
 }
+#ingredientsResults{
+    color:white;
+} 
 .ok-btn{
     width:100%;
     margin-top:4px;
