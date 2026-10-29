@@ -48,7 +48,7 @@ body{
     margin-right:8px;
     accent-color:#637d42
 }
-#ingredientsResults{
+#ingredientsResults h2{
     color:white;
 } 
 .ok-btn{
