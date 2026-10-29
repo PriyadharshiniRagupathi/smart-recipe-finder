@@ -251,7 +251,7 @@
 const food = urlParams.get("food");
 
 console.log("Selected food:", food);
-fetch(`http://localhost:3000/recipe/name/${encodeURIComponent(food)}`)
+fetch(`https://smart-recipe-finder-m8xp.onrender.com/recipe/name/${encodeURIComponent(food)}`)
     .then(response => response.json())
     .then(data => {
 
